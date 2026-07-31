@@ -3,7 +3,7 @@
 **Official Model Context Protocol (MCP) server for [Agent Critiq](https://github.com/dobby-aidev/agent-critiq)** — The AI Agents, Software Reviews & Intelligence Platform.
 
 - **GitHub Repository**: [https://github.com/dobby-aidev/agent-critiq](https://github.com/dobby-aidev/agent-critiq)
-- **Live Platform**: [https://agentcritiq.app](https://agentcritiq.app)
+- **Live Platform**: [https://agentcritiq.com](https://agentcritiq.com)
 
 This server enables **Claude Desktop, Cursor IDE, Windsurf, VS Code Copilot**, and any MCP-compatible agent to query the Agent Critiq database of **106+ AI tools** in real time via Stdio or HTTP JSON-RPC transports.
 
