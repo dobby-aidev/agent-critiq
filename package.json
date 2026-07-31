@@ -21,5 +21,13 @@
     "claude-desktop"
   ],
   "author": "Agent Critiq Team",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dobby-aidev/agent-critiq.git"
+  },
+  "homepage": "https://github.com/dobby-aidev/agent-critiq#readme",
+  "bugs": {
+    "url": "https://github.com/dobby-aidev/agent-critiq/issues"
+  }
 }
