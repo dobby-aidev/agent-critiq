@@ -1,16 +1,25 @@
 {
-  "name": "agent-critiq-mcp",
+  "name": "agent-critiq-mcp-server",
   "version": "1.0.0",
-  "description": "Official Model Context Protocol (MCP) Server for Agent Critiq AI reviews and landscape data.",
-  "main": "index.js",
+  "description": "Official Model Context Protocol (MCP) Server for Agent Critiq AI Tools Intelligence Platform",
+  "main": "index.mjs",
   "type": "module",
-  "bin": {
-    "agent-critiq-mcp": "./index.js"
-  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.mjs",
+    "test": "node test-mcp.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.6.0"
-  }
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "zod": "^3.23.8"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "agent-critiq",
+    "ai-tools",
+    "cursor",
+    "claude-desktop"
+  ],
+  "author": "Agent Critiq Team",
+  "license": "MIT"
 }

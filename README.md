@@ -1,113 +1,119 @@
-# 🤖 Agent Critiq MCP Server
+# 🤖 Agent Critiq MCP Server (v3.2.0)
 
-**Official Model Context Protocol (MCP) server for [Agent Critiq](https://agentcritiq.com)** — the AI agents & software review platform.
+**Official Model Context Protocol (MCP) server for [Agent Critiq](https://agentcritiq.app)** — The AI Agents, Software Reviews & Intelligence Platform.
 
-This server lets **Claude, Cursor, VS Code Copilot**, and any MCP-compatible AI assistant query the Agent Critiq database of **100+ AI tools** in real time — ratings, pricing, categories, and direct review links.
-
----
-
-## ✨ Available Tools
-
-| Tool | Description |
-|------|-------------|
-| `search_ai_tools` | Search by keyword, category, rating, or free-only filter |
-| `get_tool_detail` | Full details for a specific tool by slug or name |
-| `list_categories` | All 17 categories with tool counts |
-| `get_top_rated` | Top-rated tools overall or by category |
-| `compare_tools` | Side-by-side comparison of 2-3 tools |
+This server enables **Claude Desktop, Cursor IDE, Windsurf, VS Code Copilot**, and any MCP-compatible agent to query the Agent Critiq database of **106+ AI tools** in real time via Stdio or HTTP JSON-RPC transports.
 
 ---
 
-## 🚀 Quick Start
+## 🇹🇷 Türkçe Özet / Turkish Summary
 
-### Prerequisites
-- **Node.js** 18 or later
-- Clone/download this repository
+**Agent Critiq MCP Sunucusu**, Cursor, Windsurf ve Claude Desktop gibi yapay zeka kod editörlerinin Agent Critiq veritabanındaki 106'dan fazla yapay zeka aracını, gerçek kullanıcı puanlarını, fiyatlandırmaları, artı/eksi yönlerini ve araç karşılaştırma matrislerini doğrudan geliştirme ortamınızdan sorgulamasını sağlar.
 
-### Install dependencies
+---
+
+## ✨ Available Tools / Kullanılabilir MCP Araçları
+
+| Tool Name | Parameters | Description (EN) | Açıklama (TR) |
+|-----------|------------|------------------|---------------|
+| `search_ai_tools` | `query`, `category`, `min_rating`, `free_only`, `limit` | Search AI tools by keyword, category, pricing, or rating threshold. | Anahtar kelime, kategori ve puana göre AI araçları arar. |
+| `get_tool_detail` | `slug` *(required)* | Get technical specs, pros, cons, ratings, features, and review URL for a slug. | Araç slug'ına göre detaylı özellik, artı/eksi ve inceleme sayfasını getirir. |
+| `list_categories` | None | List all active software categories and total tool counts. | Tüm aktif kategorileri ve araç sayılarını listeler. |
+| `get_top_rated` | `category`, `limit` | Retrieve top-rated tools overall or filtered by category. | En yüksek puanlı araçları kategorisine göre sıralar. |
+| `compare_tools` | `slugs` *(required array)* | Generate a side-by-side comparison matrix for multiple tools. | İki veya daha fazla aracı yan yana karşılaştırma matrisi haline getirir. |
+
+---
+
+## 🚀 Quick Start / Hızlı Başlangıç
+
+### 1. Installation
 
 ```bash
 cd mcp-server
 npm install
 ```
 
-### Test locally
+### 2. Automated Stdio Test
+
+Run the included verification client to test all 5 tools over Stdio:
 
 ```bash
-node index.js
-# → ✅ Agent Critiq MCP Server running — 101 AI tools ready.
+npm test
+# OR
+node test-mcp.mjs
 ```
 
 ---
 
-## 🔌 Connect to Claude Desktop
+## 🔌 Cursor IDE Integration / Cursor Bağlantısı
 
-1. Open your Claude Desktop config file:
-   - **macOS/Linux:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+1. Open **Cursor Settings** -> **Features** -> **MCP Servers** (or edit your workspace `.cursor/mcp.json`).
+2. Add the following entry:
+
+```json
+{
+  "mcpServers": {
+    "agent-critiq": {
+      "command": "node",
+      "args": [
+        "c:/Users/ferda/Desktop/Agent Critiq/mcp-server/index.mjs"
+      ]
+    }
+  }
+}
+```
+
+3. Cursor will connect to the MCP server and show `agent-critiq` with **5 tools** active. ✅
+
+---
+
+## 🔌 Claude Desktop Integration / Claude Desktop Bağlantısı
+
+1. Open your Claude Desktop configuration file:
    - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+   - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-2. Add the following entry (adjust the path):
-
-```json
-{
-  "mcpServers": {
-    "agent-critiq": {
-      "command": "node",
-      "args": ["C:/Users/YourName/path/to/agent-critiq/mcp-server/index.js"]
-    }
-  }
-}
-```
-
-3. Restart Claude Desktop. You'll see **Agent Critiq** in the tools panel. ✅
-
----
-
-## 🔌 Connect to Cursor / VS Code Copilot
-
-Add to your workspace `.cursor/mcp.json` or `mcp.json`:
+2. Paste the following configuration:
 
 ```json
 {
   "mcpServers": {
     "agent-critiq": {
       "command": "node",
-      "args": ["./mcp-server/index.js"]
+      "args": [
+        "c:/Users/ferda/Desktop/Agent Critiq/mcp-server/index.mjs"
+      ]
     }
   }
 }
 ```
 
----
-
-## 💬 Example Prompts
-
-Once connected, ask your AI assistant:
-
-> *"What are the top 5 free coding AI agents according to Agent Critiq?"*
-
-> *"Compare Cursor vs GitHub Copilot vs Codeium."*
-
-> *"Find me autonomous AI agents with a rating above 4.5."*
-
-> *"List all AI image generation tools in the Agent Critiq database."*
+3. Restart **Claude Desktop**.
 
 ---
 
-## 📦 Data Source
+## 💬 Example Prompts / Örnek Sorular
 
-The server reads from `public/agent-critiq-2026-dataset.json` — a curated, machine-readable snapshot of the Agent Critiq catalogue.
+Once connected to your IDE or Claude Desktop, ask your AI assistant:
 
-- **101 AI tools** across 17 categories
-- Updated regularly and synced with [agentcritiq.com](https://agentcritiq.com)
-- Also available as a [Hugging Face Dataset](https://huggingface.co/datasets/dobbyb-aidev/agent-critiq-ai-reviews)
+- 🇬🇧 *"What are the top 5 free coding AI agents according to Agent Critiq?"*
+- 🇹🇷 *"Agent Critiq veritabanına göre kod yazımı için en iyi 3 yapay zeka aracını getir."*
+- 🇬🇧 *"Compare Cursor vs Claude Code vs Zed AI."*
+- 🇹🇷 *"Google Veo 3.1 ile Midjourney araçlarını karşılaştır."*
+- 🇬🇧 *"Find video generation AI tools with a rating above 4.8."*
+
+---
+
+## 📦 Data Architecture / Veri Mimarısı
+
+- **106+ AI Tools**: Indexed across 17+ core software categories.
+- **Dataset file**: `mcp-server/dataset.json` (auto-synced with `src/data/software.ts`).
+- **Response Speed**: 0ms local offline execution via Stdio JSON-RPC 2.0 protocol.
 
 ---
 
 ## 📄 License
 
-MIT — free to use, fork, and integrate.
+MIT — Free to use, fork, and integrate into custom agent workflows.
 
----
-
-**Made with ❤️ by [Agent Critiq](https://agentcritiq.com)**
+**Developed with ❤️ for [Agent Critiq](https://agentcritiq.app)**

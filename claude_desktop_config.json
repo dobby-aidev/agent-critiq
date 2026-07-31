@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "agent-critiq": {
+      "command": "node",
+      "args": [
+        "c:/Users/ferda/Desktop/Agent Critiq/mcp-server/index.mjs"
+      ]
+    }
+  }
+}
