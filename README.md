@@ -59,7 +59,7 @@ node test-mcp.mjs
     "agent-critiq": {
       "command": "node",
       "args": [
-        "c:/Users/ferda/Desktop/Agent Critiq/mcp-server/index.mjs"
+        "./mcp-server/index.mjs"
       ]
     }
   }
@@ -84,7 +84,7 @@ node test-mcp.mjs
     "agent-critiq": {
       "command": "node",
       "args": [
-        "c:/Users/ferda/Desktop/Agent Critiq/mcp-server/index.mjs"
+        "./mcp-server/index.mjs"
       ]
     }
   }
