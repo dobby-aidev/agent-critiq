@@ -1,0 +1,7 @@
+# Smithery.ai Configuration for Agent Critiq MCP Server
+startCommand:
+  type: stdio
+  config:
+    command: node
+    args:
+      - ./index.mjs
