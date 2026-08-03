@@ -1,6 +1,13 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+import { 
+  CallToolRequestSchema, 
+  ListToolsRequestSchema,
+  ListResourcesRequestSchema,
+  ReadResourceRequestSchema,
+  ListPromptsRequestSchema,
+  GetPromptRequestSchema
+} from "@modelcontextprotocol/sdk/types.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -18,14 +25,134 @@ try {
 const server = new Server(
   {
     name: "agent-critiq-mcp-server",
-    version: "3.2.0",
+    version: "3.5.0",
   },
   {
     capabilities: {
       tools: {},
+      resources: {},
+      prompts: {}
     },
   }
 );
+
+// Register MCP Resources
+server.setRequestHandler(ListResourcesRequestSchema, async () => {
+  return {
+    resources: [
+      {
+        uri: "agentcritiq://dataset/tools.json",
+        name: "Agent Critiq Full Tools Database",
+        mimeType: "application/json",
+        description: "Full indexed dataset of 100+ verified AI tools with ratings, pros, cons, and pricing."
+      },
+      {
+        uri: "agentcritiq://dataset/categories.json",
+        name: "Agent Critiq Software Categories",
+        mimeType: "application/json",
+        description: "List of all active software categories and tool distribution."
+      }
+    ]
+  };
+});
+
+server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+  const { uri } = request.params;
+  if (uri === "agentcritiq://dataset/tools.json") {
+    return {
+      contents: [
+        {
+          uri,
+          mimeType: "application/json",
+          text: JSON.stringify(dataset, null, 2)
+        }
+      ]
+    };
+  }
+  if (uri === "agentcritiq://dataset/categories.json") {
+    const categoriesMap = {};
+    dataset.forEach(tool => {
+      const cat = tool.categoryEn || "Uncategorized";
+      categoriesMap[cat] = (categoriesMap[cat] || 0) + 1;
+    });
+    return {
+      contents: [
+        {
+          uri,
+          mimeType: "application/json",
+          text: JSON.stringify(categoriesMap, null, 2)
+        }
+      ]
+    };
+  }
+  throw new Error(`Resource not found: ${uri}`);
+});
+
+// Register MCP Prompts
+server.setRequestHandler(ListPromptsRequestSchema, async () => {
+  return {
+    prompts: [
+      {
+        name: "recommend_ai_tool",
+        description: "Prompt template to get personalized AI tool recommendations from Agent Critiq database.",
+        arguments: [
+          {
+            name: "use_case",
+            description: "Describe what task or workflow you need an AI tool for (e.g., 'coding assistant', 'video generation').",
+            required: true
+          }
+        ]
+      },
+      {
+        name: "compare_ai_tools",
+        description: "Prompt template to compare two or more AI agents or software side by side.",
+        arguments: [
+          {
+            name: "tools_to_compare",
+            description: "Comma-separated tool names or slugs to compare (e.g. 'cursor, claude-code').",
+            required: true
+          }
+        ]
+      }
+    ]
+  };
+});
+
+server.setRequestHandler(GetPromptRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+  if (name === "recommend_ai_tool") {
+    const useCase = args?.use_case || "AI task";
+    return {
+      description: `Personalized AI tool recommendation for: ${useCase}`,
+      messages: [
+        {
+          role: "user",
+          content: {
+            type: "text",
+            text: `Search the Agent Critiq database using the search_ai_tools tool for '${useCase}' and recommend the top 3 tools based on rating, pros, and pricing.`
+          }
+        }
+      ]
+    };
+  }
+  if (name === "compare_ai_tools") {
+    const toolsStr = args?.tools_to_compare || "cursor, claude-code";
+    const slugs = toolsStr.split(',').map(s => s.trim());
+    return {
+      description: `Detailed comparison matrix for ${toolsStr}`,
+      messages: [
+        {
+          role: "user",
+          content: {
+            type: "text",
+            text: `Use the compare_tools MCP tool to generate a side-by-side comparison matrix for these slugs: ${JSON.stringify(slugs)}.`
+          }
+        }
+      ]
+    };
+  }
+  throw new Error(`Prompt not found: ${name}`);
+});
 
 // Register available MCP tools
 server.setRequestHandler(ListToolsRequestSchema, async () => {
@@ -135,7 +262,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               rating: t.rating,
               price: t.priceEn,
               description: t.descriptionEn,
-              review_url: `https://agentcritiq.app/review/${t.slug}`
+              review_url: `https://agentcritiq.com/review/${t.slug}`
             }))
           }, null, 2)
         }
@@ -176,7 +303,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             pros: tool.prosEn || tool.prosTr,
             cons: tool.consEn || tool.consTr,
             affiliate_url: tool.affiliateLink,
-            review_page: `https://agentcritiq.app/review/${tool.slug}`
+            review_page: `https://agentcritiq.com/review/${tool.slug}`
           }, null, 2)
         }
       ]
