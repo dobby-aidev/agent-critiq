@@ -17,7 +17,8 @@ const datasetPath = path.join(__dirname, 'dataset.json');
 let dataset = [];
 
 try {
-  dataset = JSON.parse(fs.readFileSync(datasetPath, 'utf-8'));
+  const raw = JSON.parse(fs.readFileSync(datasetPath, 'utf-8'));
+  dataset = Array.isArray(raw) ? raw : (raw.tools || []);
 } catch (err) {
   console.error("Failed to load Agent Critiq dataset.json:", err);
 }
