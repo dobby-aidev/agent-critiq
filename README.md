@@ -15,7 +15,7 @@ website: https://agentcritiq.com
 repository: https://github.com/dobby-aidev/agent-critiq
 ---
 
-# 🤖 Agent Critiq MCP Server (v3.5.0)
+# 🤖 Agent Critiq MCP Server (v3.6.0)
 
 [![MCP Protocol](https://img.shields.io/badge/MCP-v1.0.0-indigo.svg)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -33,23 +33,25 @@ This server enables **Claude Desktop, Cursor IDE, Windsurf, LobeChat, Roo Code, 
 
 ## 🇹🇷 Türkçe Özet / Turkish Summary
 
-**Agent Critiq MCP Sunucusu**, Cursor, Windsurf, LobeChat ve Claude Desktop gibi yapay zeka kod editörlerinin Agent Critiq veritabanındaki 100'den fazla yapay zeka aracını, gerçek kullanıcı puanlarını, fiyatlandırmaları, artı/eksi yönlerini ve araç karşılaştırma matrislerini doğrudan geliştirme ortamınızdan sorgulamasını sağlar.
+**Agent Critiq MCP Sunucusu v3.6.0**, Cursor, Windsurf, LobeChat ve Claude Desktop gibi yapay zeka kod editörlerinin Agent Critiq veritabanındaki 100'den fazla yapay zeka aracını, Metodoloji v3.0 (4 Fazlı) Topluluk Endeksini, gerçek zamanlı SLA ve yanıt gecikmesi telemetrilerini doğrudan geliştirme ortamınızdan sorgulamasını sağlar.
 
 ---
 
 ## ⚙️ Core Capabilities / Sunucu Yetenekleri
 
-Agent Critiq MCP Sunucusu v3.5.0, MCP spesifikasyonunun tüm **üç temel özelliğini (Tools + Resources + Prompts)** eksiksiz olarak destekler:
+Agent Critiq MCP Sunucusu v3.6.0, MCP spesifikasyonunun tüm **üç temel özelliğini (Tools + Resources + Prompts)** eksiksiz olarak destekler:
 
-### 🛠️ 1. MCP Tools (Ajan Araçları)
+### 🛠️ 1. MCP Tools (Ajan Araçları - 7 Adet)
 
 | Tool Name | Parameters | Description (EN) | Açıklama (TR) |
 |-----------|------------|------------------|---------------|
-| `search_ai_tools` | `query`, `category`, `min_rating`, `free_only`, `limit` | Search AI tools by keyword, category, pricing, or rating threshold. | Anahtar kelime, kategori ve puana göre AI araçları arar. |
-| `get_tool_detail` | `slug` *(required)* | Get technical specs, pros, cons, ratings, features, and review URL for a slug. | Araç slug'ına göre detaylı özellik, artı/eksi ve inceleme sayfasını getirir. |
+| `search_ai_tools` | `query`, `category`, `min_rating`, `free_only`, `limit` | Search AI tools with Metodoloji v3.0 Community Index. | Anahtar kelime, kategori ve puana göre AI araçları arar. |
+| `get_tool_detail` | `slug` *(required)* | Get technical specs, pros, cons, Metodoloji v3.0 index, and live SLA. | Araç slug'ına göre detaylı özellik, artı/eksi ve canlı SLA telemetrisi getirir. |
+| `get_methodology_audit` | `slug` *(required)* | Retrieve objective 4-phase scorecard (Ecosystem, Stress/SLA, Security, Human). | 4 fazlı test karnesini (Ekosistem, Stres/SLA, Güvenlik, İnsan Testi) getirir. |
+| `get_agent_telemetry` | `slug` *(required)* | Retrieve modeled response latency (ms), uptime SLA, and throughput. | Yanıt gecikmesi (ms), SLA uptime (%) ve çıktı hızı telemetrisini getirir. |
 | `list_categories` | None | List all active software categories and total tool counts. | Tüm aktif kategorileri ve araç sayılarını listeler. |
-| `get_top_rated` | `category`, `limit` | Retrieve top-rated tools overall or filtered by category. | En yüksek puanlı araçları kategorisine göre sıralar. |
-| `compare_tools` | `slugs` *(required array)* | Generate a side-by-side comparison matrix for multiple tools. | İki veya daha fazla aracı yan yana karşılaştırma matrisi haline getirir. |
+| `get_top_rated` | `category`, `by_community_index`, `limit` | Retrieve top-rated tools sorted by Community Index. | Metodoloji v3.0 puanına göre en yüksek araçları sıralar. |
+| `compare_tools` | `slugs` *(required array)* | Generate a side-by-side comparison matrix with 4-phase scores. | Araçları 4 faz puanı ve telemetrisiyle yan yana karşılaştırır. |
 
 ---
 

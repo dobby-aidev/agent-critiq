@@ -26,7 +26,7 @@ try {
 const server = new Server(
   {
     name: "agent-critiq-mcp-server",
-    version: "3.5.0",
+    version: "3.6.0",
   },
   {
     capabilities: {
@@ -43,9 +43,9 @@ server.setRequestHandler(ListResourcesRequestSchema, async () => {
     resources: [
       {
         uri: "agentcritiq://dataset/tools.json",
-        name: "Agent Critiq Full Tools Database",
+        name: "Agent Critiq Full Tools Database (Methodology v3.0)",
         mimeType: "application/json",
-        description: "Full indexed dataset of 100+ verified AI tools with ratings, pros, cons, and pricing."
+        description: "Full indexed dataset of 100+ verified AI tools with Metodoloji v3.0 Community Index, 4-phase audits, SLA, and pricing."
       },
       {
         uri: "agentcritiq://dataset/categories.json",
@@ -114,6 +114,17 @@ server.setRequestHandler(ListPromptsRequestSchema, async () => {
             required: true
           }
         ]
+      },
+      {
+        name: "audit_tool_methodology",
+        description: "Inspect the 4-phase objective evaluation protocol (Ecosystem, Stress/SLA, Security, 40+h Human Test) for any tool.",
+        arguments: [
+          {
+            name: "slug",
+            description: "Tool slug (e.g., 'cursor', 'claude-3-7-sonnet', 'devin-ai')",
+            required: true
+          }
+        ]
       }
     ]
   };
@@ -130,7 +141,7 @@ server.setRequestHandler(GetPromptRequestSchema, async (request) => {
           role: "user",
           content: {
             type: "text",
-            text: `Search the Agent Critiq database using the search_ai_tools tool for '${useCase}' and recommend the top 3 tools based on rating, pros, and pricing.`
+            text: `Search the Agent Critiq database using the search_ai_tools tool for '${useCase}' and recommend the top 3 tools based on Metodoloji v3.0 Community Index, pros, and pricing.`
           }
         }
       ]
@@ -152,6 +163,21 @@ server.setRequestHandler(GetPromptRequestSchema, async (request) => {
       ]
     };
   }
+  if (name === "audit_tool_methodology") {
+    const slug = args?.slug || "cursor";
+    return {
+      description: `Audit Metodoloji v3.0 4-phase scorecard for ${slug}`,
+      messages: [
+        {
+          role: "user",
+          content: {
+            type: "text",
+            text: `Use the get_methodology_audit MCP tool to inspect the 4-phase test report card and live agent telemetry for '${slug}'.`
+          }
+        }
+      ]
+    };
+  }
   throw new Error(`Prompt not found: ${name}`);
 });
 
@@ -161,7 +187,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
     tools: [
       {
         name: "search_ai_tools",
-        description: "Search AI tools in Agent Critiq database by keyword, category, pricing, or minimum rating threshold.",
+        description: "Search AI tools in Agent Critiq database by keyword, category, pricing, or minimum rating threshold with Metodoloji v3.0 Community Index.",
         inputSchema: {
           type: "object",
           properties: {
@@ -175,11 +201,33 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: "get_tool_detail",
-        description: "Retrieve complete technical details, pros/cons, ratings, features, and review links for a specific tool slug.",
+        description: "Retrieve complete technical details, pros/cons, Metodoloji v3.0 Community Index, live SLA telemetry, and review links for a specific tool slug.",
         inputSchema: {
           type: "object",
           properties: {
-            slug: { type: "string", description: "Tool slug (e.g., 'cursor', 'google-veo-3-1', 'claude-3-5-sonnet')" }
+            slug: { type: "string", description: "Tool slug (e.g., 'cursor', 'google-veo-3-1', 'claude-3-7-sonnet')" }
+          },
+          required: ["slug"]
+        }
+      },
+      {
+        name: "get_methodology_audit",
+        description: "Retrieve the objective 4-phase Metodoloji v3.0 test scorecard (Ecosystem 25%, Stress/SLA 25%, Security 20%, 40+h Human Field Test 30%) and confidence metrics for any AI tool.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            slug: { type: "string", description: "Tool slug (e.g., 'cursor', 'devin-ai', 'midjourney')" }
+          },
+          required: ["slug"]
+        }
+      },
+      {
+        name: "get_agent_telemetry",
+        description: "Retrieve live modeled agent SLA uptime, response latency (ms/sec), and throughput for any AI tool or model.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            slug: { type: "string", description: "Tool slug (e.g., 'cursor', 'ollama', 'suno-ai')" }
           },
           required: ["slug"]
         }
@@ -194,18 +242,19 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: "get_top_rated",
-        description: "Retrieve top-rated AI tools sorted by Agent Critiq overall rating.",
+        description: "Retrieve top-rated AI tools sorted by Metodoloji v3.0 Community Index or overall rating.",
         inputSchema: {
           type: "object",
           properties: {
             category: { type: "string", description: "Optional category filter" },
+            by_community_index: { type: "boolean", description: "Sort by Metodoloji v3.0 Community Index (default: true)" },
             limit: { type: "number", description: "Max items to return (default: 10)" }
           }
         }
       },
       {
         name: "compare_tools",
-        description: "Generate a side-by-side feature and rating comparison matrix for two or more AI tool slugs.",
+        description: "Generate a side-by-side feature, SLA telemetry, and 4-phase Metodoloji v3.0 comparison matrix for two or more AI tool slugs.",
         inputSchema: {
           type: "object",
           properties: {
@@ -261,8 +310,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               slug: t.slug,
               category: t.categoryEn,
               rating: t.rating,
+              community_index: t.communityIndex?.scoreFormatted ? `${t.communityIndex.scoreFormatted} / 5.0` : undefined,
+              confidence: t.communityIndex?.confidenceLabelEn,
               price: t.priceEn,
-              description: t.descriptionEn,
+              sla: t.telemetry?.uptimeSla,
+              latency: t.telemetry?.avgLatencyFormatted,
               review_url: `https://agentcritiq.com/review/${t.slug}`
             }))
           }, null, 2)
@@ -273,7 +325,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   if (name === "get_tool_detail") {
     const slug = (args?.slug || "").toLowerCase();
-    const tool = dataset.find(t => t.slug.toLowerCase() === slug || t.id.toLowerCase() === slug);
+    const tool = dataset.find(t => (t.slug && t.slug.toLowerCase() === slug) || (t.id && String(t.id).toLowerCase() === slug));
 
     if (!tool) {
       return {
@@ -296,6 +348,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             category: tool.categoryEn,
             rating: tool.rating,
             reviews_count: tool.reviews,
+            community_index: {
+              score: tool.communityIndex?.scoreFormatted ? `${tool.communityIndex.scoreFormatted} / 5.0` : `${tool.rating} / 5.0`,
+              confidence: tool.communityIndex?.confidenceLabelEn || "Verified",
+              percentile: tool.communityIndex?.percentile ? `%${tool.communityIndex.percentile}` : undefined,
+              phases: tool.communityIndex?.phases
+            },
+            live_telemetry: tool.telemetry,
             pricing: {
               en: tool.priceEn,
               tr: tool.priceTr
@@ -303,8 +362,93 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             features: tool.featuresEn || tool.featuresTr,
             pros: tool.prosEn || tool.prosTr,
             cons: tool.consEn || tool.consTr,
+            has_api: Boolean(tool.hasApi),
+            is_open_source: Boolean(tool.isOpenSource),
             affiliate_url: tool.affiliateLink,
             review_page: `https://agentcritiq.com/review/${tool.slug}`
+          }, null, 2)
+        }
+      ]
+    };
+  }
+
+  if (name === "get_methodology_audit") {
+    const slug = (args?.slug || "").toLowerCase();
+    const tool = dataset.find(t => (t.slug && t.slug.toLowerCase() === slug) || (t.id && String(t.id).toLowerCase() === slug));
+
+    if (!tool) {
+      return {
+        content: [{ type: "text", text: JSON.stringify({ error: `Tool '${slug}' not found.` }, null, 2) }]
+      };
+    }
+
+    const phases = tool.communityIndex?.phases || {
+      phase1Ecosystem: 4.0,
+      phase2StressSLA: 4.0,
+      phase3Security: 4.0,
+      phase4ExpertHuman: 4.0
+    };
+
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({
+            name: tool.name,
+            slug: tool.slug,
+            methodology: "Agent Critiq Protocol v3.0 (4-Phase Independent Lab Audit)",
+            overall_community_index: `${tool.communityIndex?.scoreFormatted || tool.rating} / 5.0`,
+            confidence: tool.communityIndex?.confidenceLabelEn || "Verified",
+            percentile_rank: `Top ${100 - (tool.communityIndex?.percentile || 80)}% percentile`,
+            phases_scorecard: {
+              phase1_ecosystem_and_pulse: {
+                weight: "25%",
+                score: `${phases.phase1Ecosystem.toFixed(1)} / 5.0`,
+                metrics: "GitHub stars, adoption velocity, API presence, ecosystem discussions"
+              },
+              phase2_lab_stress_and_sla: {
+                weight: "25%",
+                score: `${phases.phase2StressSLA.toFixed(1)} / 5.0`,
+                metrics: "Context window consistency, memory retention, latency tolerance, uptime"
+              },
+              phase3_security_and_privacy: {
+                weight: "20%",
+                score: `${phases.phase3Security.toFixed(1)} / 5.0`,
+                metrics: "Zero-data retention, shadow-training risk, SOC2 compliance, license audit"
+              },
+              phase4_human_field_test: {
+                weight: "30%",
+                score: `${phases.phase4ExpertHuman.toFixed(1)} / 5.0`,
+                metrics: "40+ hours hands-on field testing by senior staff engineers in production workflows"
+              }
+            },
+            verified_human_review_url: `https://agentcritiq.com/review/${tool.slug}`
+          }, null, 2)
+        }
+      ]
+    };
+  }
+
+  if (name === "get_agent_telemetry") {
+    const slug = (args?.slug || "").toLowerCase();
+    const tool = dataset.find(t => (t.slug && t.slug.toLowerCase() === slug) || (t.id && String(t.id).toLowerCase() === slug));
+
+    if (!tool) {
+      return {
+        content: [{ type: "text", text: JSON.stringify({ error: `Tool '${slug}' not found.` }, null, 2) }]
+      };
+    }
+
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({
+            name: tool.name,
+            slug: tool.slug,
+            telemetry: tool.telemetry,
+            architecture: tool.isOpenSource ? "Open Source / Local Model" : (tool.hasApi ? "Cloud API SaaS" : "Managed Web App"),
+            official_url: tool.affiliateLink || `https://agentcritiq.com/go/${tool.slug}`
           }, null, 2)
         }
       ]
@@ -334,13 +478,18 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   if (name === "get_top_rated") {
     const cat = (args?.category || "").toLowerCase();
+    const byCommunityIndex = args?.by_community_index !== false;
     const limit = Number(args?.limit) || 10;
 
     let list = cat 
       ? dataset.filter(t => (t.categoryEn && t.categoryEn.toLowerCase().includes(cat)) || (t.categoryTr && t.categoryTr.toLowerCase().includes(cat)))
       : [...dataset];
 
-    list.sort((a, b) => b.rating - a.rating);
+    if (byCommunityIndex) {
+      list.sort((a, b) => (b.communityIndex?.score || b.rating) - (a.communityIndex?.score || a.rating));
+    } else {
+      list.sort((a, b) => b.rating - a.rating);
+    }
     list = list.slice(0, limit);
 
     return {
@@ -352,9 +501,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             tools: list.map(t => ({
               name: t.name,
               slug: t.slug,
+              community_index: t.communityIndex?.scoreFormatted ? `${t.communityIndex.scoreFormatted} / 5.0` : undefined,
               rating: t.rating,
               category: t.categoryEn,
-              pricing: t.priceEn
+              pricing: t.priceEn,
+              sla: t.telemetry?.uptimeSla
             }))
           }, null, 2)
         }
@@ -375,10 +526,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             tools: tools.map(t => ({
               name: t.name,
               slug: t.slug,
-              rating: t.rating,
+              community_index: t.communityIndex?.scoreFormatted ? `${t.communityIndex.scoreFormatted} / 5.0` : `${t.rating} / 5.0`,
+              methodology_phases: t.communityIndex?.phases,
+              sla: t.telemetry?.uptimeSla,
+              latency: t.telemetry?.avgLatencyFormatted,
               pricing: t.priceEn,
-              has_api: t.hasApi,
-              is_open_source: t.isOpenSource,
+              has_api: Boolean(t.hasApi),
+              is_open_source: Boolean(t.isOpenSource),
               features: t.featuresEn || t.featuresTr,
               pros: t.prosEn || t.prosTr,
               cons: t.consEn || t.consTr
@@ -395,7 +549,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Agent Critiq MCP Server running on Stdio transport.");
+  console.error("Agent Critiq MCP Server v3.6.0 running on Stdio transport (Methodology v3.0 Enabled).");
 }
 
 main().catch(err => {
