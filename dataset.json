@@ -1,7 +1,165 @@
 [
   {
+    "id": "runninghub",
+    "slug": "runninghub",
+    "lastAudited": "2026-11",
+    "engineVersion": "ComfyUI v0.3.18 / rhTV 2.5 / Seedance",
+    "changelogSummary": "Audited cloud ComfyUI custom nodes execution, rhTV node performance, and multi-model SDXL/Flux pipeline latency.",
+    "changelogSummaryTr": "Bulut ComfyUI özel düğüm yürütmesi, rhTV düğüm performansı ve çok modelli SDXL/Flux boru hattı gecikmesi denetlendi.",
+    "addedDate": "2026-10-26",
+    "lastUpdated": "2026-10-26",
+    "seoOptimized": true,
+    "isFeatured": true,
+    "isVerified": true,
+    "isAd": true,
+    "hasApi": true,
+    "isOpenSource": false,
+    "noCreditCard": true,
+    "trSupport": false,
+    "name": "RunningHub",
+    "categoryEn": "Image Generation",
+    "categoryTr": "Görsel Üretimi",
+    "categoryEs": "Generación de Imágenes",
+    "rating": 4.4,
+    "reviews": 28,
+    "logo": "https://www.google.com/s2/favicons?domain=runninghub.ai&sz=128",
+    "priceEn": "Free Trial ($20 Test Credits) / Credit-Based",
+    "priceTr": "Ücretsiz Deneme (20$ Test Kredisi) / Kredi Bazlı",
+    "priceEs": "Prueba Gratis ($20 Créditos de Prueba) / Pago por Crédito",
+    "affiliateLink": "https://www.runninghub.ai/?inviteCode=jxtg1ngl",
+    "descriptionEn": "RunningHub is a high-performance cloud AI platform providing serverless ComfyUI workflow execution, rhTV infinite node canvas, and multi-model image and video synthesis without local GPU constraints.",
+    "descriptionTr": "RunningHub; yerel donanım sınırı olmadan bulut ComfyUI iş akışları, rhTV sonsuz düğüm tuvali ve çoklu model görsel/video üretimi sunan yüksek performanslı yapay zeka platformudur.",
+    "descriptionEs": "RunningHub es una plataforma de IA en la nube que permite ejecutar flujos de ComfyUI sin servidor, lienzo infinito rhTV y generación avanzada de imagen y video.",
+    "featuresEn": [
+      "Serverless ComfyUI Cloud Execution with Custom Nodes",
+      "rhTV Infinite Canvas for Multi-Model Media Workflows",
+      "High-Resolution Image Synthesis (Flux, SDXL, LoRA)",
+      "Next-Gen Video Generation (Wan, Kling, SVD Pipelines)"
+    ],
+    "featuresTr": [
+      "Sunucusuz ComfyUI Bulut Yürütme ve Özel Düğüm Desteği",
+      "Çok Modelli Medya İş Akışları için rhTV Sonsuz Tuval",
+      "Yüksek Çözünürlüklü Görsel Üretimi (Flux, SDXL, LoRA)",
+      "Yeni Nesil Video Üretimi (Wan, Kling, SVD Boru Hatları)"
+    ],
+    "badges": [
+      "Tier 1 · Flagship",
+      "Doğrulanmış İnceleme",
+      "ComfyUI Cloud",
+      "rhTV Canvas"
+    ],
+    "scoreBreakdown": {
+      "developerActivity": 4.5,
+      "communityTrust": 4.3,
+      "releaseVelocity": 4.6,
+      "documentationQuality": 4.2,
+      "reliability": 4.4
+    },
+    "tagsEn": [
+      "ComfyUI",
+      "Cloud GPU",
+      "rhTV Canvas",
+      "Flux AI",
+      "Video Generation",
+      "Image Generation"
+    ],
+    "tagsTr": [
+      "ComfyUI Bulut",
+      "Bulut GPU",
+      "rhTV Tuval",
+      "Flux AI",
+      "Video Üretimi",
+      "Görsel Üretimi"
+    ],
+    "prosEn": [
+      "Zero local VRAM requirement: Run 24GB+ heavy ComfyUI pipelines effortlessly in the cloud",
+      "rhTV infinite canvas bridges complex node architectures into an intuitive visual workspace",
+      "Generous initial trial credits allowing thorough hands-on validation across image and video models"
+    ],
+    "prosTr": [
+      "Sıfır yerel VRAM gereksinimi: 24GB+ bellek isteyen ağır ComfyUI iş akışlarını doğrudan bulutta çalıştırma",
+      "rhTV sonsuz tuvali ile karmaşık düğüm mimarilerini sezgisel ve görsel bir üretim alanına dönüştürme",
+      "Görsel ve video modellerini derinlemesine test etmeye olanak tanıyan cömert başlangıç test kredisi"
+    ],
+    "consEn": [
+      "Credit consumption scales rapidly when chaining high-step video models and 4K upscaling",
+      "Requires familiarity with node-based ComfyUI logic to extract maximum creative control"
+    ],
+    "consTr": [
+      "Yüksek adımlı video modelleri ve 4K ölçekleme zincirlerinde kredi tüketimi hızlanabilmektedir",
+      "Maksimum yaratıcı kontrol için düğüm tabanlı ComfyUI mantığına aşinalık gerektirmesi"
+    ],
+    "models": [
+      {
+        "id": "seedance-2-5",
+        "name": "Seedance 2.5 (2K Video)",
+        "version": "2.5 2K Cinematic",
+        "badge": "2K VIDEO SOTA",
+        "badgeColor": "border-amber-500/40 bg-amber-500/10 text-amber-300",
+        "contextWindow": "30s 1440x2560",
+        "latency": "30.048s",
+        "pricing": "¥10.47 (~$1.45)",
+        "taglineTr": "0 GB yerel VRAM yüküyle 30 saniyelik 2K dikey sinematik video üretimi.",
+        "taglineEn": "30-second 2K vertical cinematic video synthesis with zero client VRAM overhead.",
+        "status": "frontier"
+      },
+      {
+        "id": "rhtv-canvas",
+        "name": "rhTV ComfyUI Canvas",
+        "version": "rhTV v2.5",
+        "badge": "NODE CANVAS",
+        "badgeColor": "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+        "contextWindow": "Sonsuz Düğüm Tuvali",
+        "latency": "Bulut GPU",
+        "pricing": "Kredi Bazlı",
+        "taglineTr": "Yerel ComfyUI JSON dosyalarını doğrudan bulutta çalıştıran görsel tuval.",
+        "taglineEn": "Visual graph canvas executing local ComfyUI JSON files seamlessly in the cloud.",
+        "status": "frontier"
+      },
+      {
+        "id": "flux-1-cloud",
+        "name": "Flux.1 Dev / Schnell Cluster",
+        "version": "Flux.1 12B",
+        "badge": "FOTOGERÇEKÇİ",
+        "badgeColor": "border-emerald-500/40 bg-emerald-500/10 text-emerald-300",
+        "contextWindow": "2048x2048",
+        "latency": "8.4s",
+        "pricing": "¥1.20 / görsel",
+        "taglineTr": "24GB VRAM gerektiren Flux.1 modellerini donanım sınırı olmadan bulutta çalıştırma.",
+        "taglineEn": "Execute 24GB VRAM Flux.1 checkpoints in serverless cloud clusters.",
+        "status": "frontier"
+      }
+    ],
+    "communityIndex": {
+      "score": 4.3,
+      "scoreFormatted": "4.3",
+      "confidenceLevel": "Moderate",
+      "confidenceLabelTr": "Doğrulanmış",
+      "confidenceLabelEn": "Verified",
+      "percentile": 86,
+      "methodologyVersion": "Metodoloji v3.0",
+      "phases": {
+        "phase1Ecosystem": 4.4,
+        "phase2StressSLA": 4.4,
+        "phase3Security": 3.8,
+        "phase4ExpertHuman": 4.3
+      }
+    },
+    "telemetry": {
+      "avgLatencyFormatted": "~238 ms",
+      "uptimeSla": "99.95%",
+      "throughputFormatted": "~68 tok/s",
+      "badgeLabelTr": "Bulut SLA",
+      "badgeLabelEn": "Cloud SLA"
+    }
+  },
+  {
     "id": "cursor",
     "slug": "cursor",
+    "lastAudited": "2026-11",
+    "engineVersion": "v0.45 (Composer Agent)",
+    "changelogSummary": "Audited multi-file Composer agent accuracy, background indexing speed, and Claude 3.5 Sonnet context retention.",
+    "changelogSummaryTr": "Çok dosyalı Composer ajan doğruluğu, arka plan indeksleme hızı ve Claude 3.5 Sonnet bağlam tutarlılığı denetlendi.",
     "addedDate": "2026-01-10",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -107,6 +265,11 @@
   {
     "id": "claude-3-5-sonnet",
     "slug": "claude-3-5-sonnet",
+    "lastAudited": "2026-11",
+    "engineVersion": "Claude 3.7 Sonnet (Extended Thinking)",
+    "changelogSummary": "Benchmarked dynamic reasoning token budgets, SWE-bench verified coding prowess, and native Claude Code terminal orchestration.",
+    "changelogSummaryTr": "Dinamik muhakeme token bütçeleri, SWE-bench onaylı kodlama gücü ve yerel Claude Code terminal orkestrasyonu test edildi.",
+    "lifecycleStatus": "frontier",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -116,7 +279,7 @@
     "isOpenSource": false,
     "noCreditCard": false,
     "trSupport": true,
-    "name": "Claude 3.7 Sonnet & 3.5 Sonnet",
+    "name": "Claude",
     "categoryEn": "Text & Chat AI",
     "categoryTr": "Metin ve Sohbet",
     "categoryEs": "IA de Texto y Chat",
@@ -188,6 +351,78 @@
       "Çok uzun bağlamlı yoğun kullanımda Pro mesaj kotalarına ulaşılabilmesi",
       "OpenAI'nin Gelişmiş Ses Modu gibi doğrudan sesli diyalog özelliğinin yerleşik bulunmaması"
     ],
+    "models": [
+      {
+        "id": "claude-3-7-sonnet",
+        "name": "Claude 3.7 Sonnet (Hybrid)",
+        "version": "Claude 3.7 Hybrid",
+        "badge": "SOTA REASONING",
+        "badgeColor": "border-violet-500/40 bg-violet-500/10 text-violet-300",
+        "contextWindow": "200K tokens",
+        "latency": "420ms (Anlık / Düşünme)",
+        "sweBench": "70.3%",
+        "pricing": "$3.00 / $15.00 (1M)",
+        "taglineTr": "Anlık hızlı yanıt ile dinamik derin düşünme (extended thinking) modunu tek modelde birleştiren amiral gemisi.",
+        "taglineEn": "Dual-brain hybrid reasoning uniting instant standard inference with extended step-by-step thinking.",
+        "status": "frontier"
+      },
+      {
+        "id": "claude-3-5-sonnet",
+        "name": "Claude 3.5 Sonnet",
+        "version": "v3.5 Sonnet",
+        "badge": "KODLAMA STANDARDI",
+        "badgeColor": "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+        "contextWindow": "200K tokens",
+        "latency": "380ms",
+        "sweBench": "64.2%",
+        "pricing": "$3.00 / $15.00 (1M)",
+        "taglineTr": "Yazılım mühendisliği ve mimari refactoring alanında endüstri standardı kodlama modeli.",
+        "taglineEn": "The industry benchmark model for production code generation and complex multi-file refactoring.",
+        "status": "active"
+      },
+      {
+        "id": "claude-3-5-haiku",
+        "name": "Claude 3.5 Haiku",
+        "version": "v3.5 Haiku",
+        "badge": "ULTRA HIZLI",
+        "badgeColor": "border-emerald-500/40 bg-emerald-500/10 text-emerald-300",
+        "contextWindow": "200K tokens",
+        "latency": "120ms",
+        "sweBench": "40.6%",
+        "pricing": "$0.80 / $4.00 (1M)",
+        "taglineTr": "Yüksek hacimli API çağrıları ve gerçek zamanlı asistan işleri için ışık hızında kompakt model.",
+        "taglineEn": "Lightning-fast, cost-efficient model designed for high-throughput API routing and instant chat.",
+        "status": "active"
+      },
+      {
+        "id": "claude-3-5-opus",
+        "name": "Claude 3.5 Opus",
+        "version": "v3.5 Opus",
+        "badge": "AĞIR SIKLET MUHAKEME",
+        "badgeColor": "border-purple-500/40 bg-purple-500/10 text-purple-300",
+        "contextWindow": "200K tokens",
+        "latency": "520ms",
+        "sweBench": "62.8%",
+        "pricing": "$15.00 / $75.00 (1M)",
+        "taglineTr": "Derin akademik araştırma, karmaşık hukuk ve yüksek entropili alan mantığı için amiral gemisi model.",
+        "taglineEn": "Heavyweight intelligence model designed for deep scientific reasoning and executive analysis.",
+        "status": "active"
+      },
+      {
+        "id": "claude-code",
+        "name": "Claude Code (CLI)",
+        "version": "CLI v1.0.8",
+        "badge": "OTONOM TERMİNAL",
+        "badgeColor": "border-amber-500/40 bg-amber-500/10 text-amber-300",
+        "contextWindow": "200K tokens",
+        "latency": "Terminal Native",
+        "sweBench": "Otonom Git / Test",
+        "pricing": "API Token Bazlı",
+        "taglineTr": "Doğrudan terminalinizde kod yazan, testleri çalıştıran ve commit atan otonom CLI mühendisi.",
+        "taglineEn": "Autonomous terminal-native CLI agent that understands repository context, tests and commits.",
+        "status": "frontier"
+      }
+    ],
     "communityIndex": {
       "score": 4.2,
       "scoreFormatted": "4.2",
@@ -214,6 +449,10 @@
   {
     "id": "midjourney",
     "slug": "midjourney",
+    "lastAudited": "2026-11",
+    "engineVersion": "v7.0 (Web Studio)",
+    "changelogSummary": "Audited micro-texture rendering, character consistency seeds, and native web canvas inpainting/outpainting.",
+    "changelogSummaryTr": "Mikro doku oluşturma, karakter tutarlılık tohumları ve yerel web tuvali iç/dış boyama yetenekleri denetlendi.",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -319,113 +558,12 @@
     }
   },
   {
-    "id": "claude-code",
-    "slug": "claude-code",
-    "addedDate": "2026-02-20",
-    "lastUpdated": "2026-08-24",
-    "seoOptimized": true,
-    "isFeatured": true,
-    "isVerified": true,
-    "hasApi": true,
-    "isOpenSource": true,
-    "noCreditCard": true,
-    "trSupport": true,
-    "name": "Claude Code",
-    "categoryEn": "Coding & Dev Agents",
-    "categoryTr": "Kodlama ve Geliştirici",
-    "categoryEs": "Agentes de Código",
-    "rating": 4.2,
-    "reviews": 37,
-    "logo": "https://www.google.com/s2/favicons?domain=anthropic.com&sz=128",
-    "priceEn": "Free CLI / API Usage (Anthropic)",
-    "priceTr": "Ücretsiz CLI / API Kullanım Maliyeti",
-    "priceEs": "CLI Gratis / Uso de API",
-    "affiliateLink": "https://claude.ai/code",
-    "descriptionEn": "Claude Code is Anthropic's official agentic command-line tool that operates directly in your terminal to understand, edit, test, and commit code autonomously.",
-    "descriptionTr": "Claude Code, Anthropic tarafından sunulan; doğrudan terminalinizde çalışan, kod tabanını anlayan, testleri koşan ve git commit'leri oluşturan resmi otonom CLI aracıdır.",
-    "descriptionEs": "Claude Code es la herramienta oficial de línea de comandos de Anthropic para desarrollo autónomo en terminal.",
-    "featuresEn": [
-      "Terminal-Native Agent with Direct File & Git Access",
-      "Powered by Claude 3.7 Sonnet Hybrid Reasoning",
-      "Autonomous Test Execution & Bug Resolution",
-      "Subagent Task Spawning & Background Indexing"
-    ],
-    "featuresTr": [
-      "Terminal Üzerinden Doğrudan Dosya ve Git Erişimi",
-      "Claude 3.7 Sonnet Hibrit Akıl Yürütme Gücü",
-      "Otonom Test Çalıştırma ve Hata Düzeltme",
-      "Alt Ajan Görev Dağıtımı ve Arka Plan İndeksleme"
-    ],
-    "badges": [
-      "Editor Choice",
-      "Official Tool",
-      "Agentic CLI"
-    ],
-    "scoreBreakdown": {
-      "developerActivity": 4.1,
-      "communityTrust": 4.1,
-      "releaseVelocity": 4.3,
-      "documentationQuality": 4.1,
-      "reliability": 4.3
-    },
-    "tagsEn": [
-      "Anthropic",
-      "Claude Code",
-      "CLI Agent",
-      "Autonomous Coding",
-      "Terminal AI"
-    ],
-    "tagsTr": [
-      "Anthropic",
-      "Claude Code",
-      "Terminal Ajanı",
-      "Otonom Kodlama",
-      "CLI"
-    ],
-    "prosEn": [
-      "No GUI overhead: lightning-fast terminal-first operation",
-      "Exceptional reasoning on complex legacy code refactoring",
-      "Direct integration with git branch creation and commit messages"
-    ],
-    "prosTr": [
-      "Arayüz yükü olmadan doğrudan terminal hızında çalışma",
-      "Karmaşık eski kodların refactor edilmesinde olağanüstü akıl yürütme",
-      "Git dalları açma ve commit mesajı oluşturmayla kusursuz uyum"
-    ],
-    "consEn": [
-      "Requires active Anthropic API key with sufficient token balance",
-      "Can consume significant tokens during deep codebase traversals"
-    ],
-    "consTr": [
-      "Aktif Anthropic API anahtarı ve bakiye gerektirmesi",
-      "Büyük projelerde derin analizler sırasında token tüketiminin artabilmesi"
-    ],
-    "communityIndex": {
-      "score": 4.3,
-      "scoreFormatted": "4.3",
-      "confidenceLevel": "Moderate",
-      "confidenceLabelTr": "Doğrulanmış",
-      "confidenceLabelEn": "Verified",
-      "percentile": 86,
-      "methodologyVersion": "Metodoloji v3.0",
-      "phases": {
-        "phase1Ecosystem": 4.3,
-        "phase2StressSLA": 4.3,
-        "phase3Security": 4.5,
-        "phase4ExpertHuman": 4.2
-      }
-    },
-    "telemetry": {
-      "avgLatencyFormatted": "~168 ms",
-      "uptimeSla": "99.92%",
-      "throughputFormatted": "~113 tok/s",
-      "badgeLabelTr": "Ajan Yürütme Motoru",
-      "badgeLabelEn": "Agentic Execution Engine"
-    }
-  },
-  {
     "id": "chatgpt-plus",
     "slug": "chatgpt-plus",
+    "lastAudited": "2026-11",
+    "engineVersion": "GPT-4.5 Orion/Arhon / o3-mini / Operator",
+    "changelogSummary": "Audited GPT-4.5 Orion/Arhon multi-step reasoning, o3-mini coding latency, and autonomous Operator browser actions.",
+    "changelogSummaryTr": "GPT-4.5 Orion/Arhon çok adımlı muhakeme, o3-mini kodlama gecikmesi ve otonom Operator tarayıcı eylemleri denetlendi.",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -435,7 +573,7 @@
     "isOpenSource": false,
     "noCreditCard": false,
     "trSupport": true,
-    "name": "ChatGPT Plus",
+    "name": "ChatGPT",
     "categoryEn": "Text & Chat AI",
     "categoryTr": "Metin ve Sohbet",
     "categoryEs": "IA de Texto y Chat",
@@ -507,6 +645,64 @@
       "Plus abonelerinde dahi o1 model kullanımında haftalık/günlük mesaj limitleri olması",
       "Web aramalarında bazen doğrudan kaynak yerine popüler SEO sayfalarına yönelebilmesi"
     ],
+    "models": [
+      {
+        "id": "gpt-4-5-orion",
+        "name": "GPT-4.5 (Orion / Arhon)",
+        "version": "GPT-4.5 Orion SOTA",
+        "badge": "FRONTIER SOTA",
+        "badgeColor": "border-emerald-500/40 bg-emerald-500/10 text-emerald-300",
+        "contextWindow": "256K tokens",
+        "latency": "340ms",
+        "sweBench": "68.9%",
+        "pricing": "$2.50 / $10.00 (1M)",
+        "taglineTr": "OpenAI'nin en yeni Orion/Arhon amiral gemisi; ileri seviye muhakeme ve sezgisel metin anlayışı.",
+        "taglineEn": "OpenAI flagship Orion architecture delivering breakthrough world knowledge and deep reasoning.",
+        "status": "frontier"
+      },
+      {
+        "id": "o3-mini",
+        "name": "o3-mini (Reasoning)",
+        "version": "o3-mini v1",
+        "badge": "DERİN MUHAKEME",
+        "badgeColor": "border-violet-500/40 bg-violet-500/10 text-violet-300",
+        "contextWindow": "200K tokens",
+        "latency": "280ms",
+        "sweBench": "72.4%",
+        "pricing": "$1.10 / $4.40 (1M)",
+        "taglineTr": "Matematik, bilim ve karmaşık yazılım algoritmaları için geliştirilmiş yüksek verimli akıl yürütme motoru.",
+        "taglineEn": "High-efficiency reasoning model specialized for competitive coding, math, and STEM logic.",
+        "status": "frontier"
+      },
+      {
+        "id": "gpt-4o",
+        "name": "GPT-4o (Omni Multimodal)",
+        "version": "GPT-4o Nov 2026",
+        "badge": "ÇOKLU ORTAM & SES",
+        "badgeColor": "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+        "contextWindow": "128K tokens",
+        "latency": "220ms",
+        "sweBench": "62.4%",
+        "pricing": "$2.50 / $10.00 (1M)",
+        "taglineTr": "Gerçek zamanlı kamera görüşü, doğal sesli sohbet ve Canvas çalışma alanı sunan çok modlu motor.",
+        "taglineEn": "Real-time voice and vision engine with native Canvas integration for instant writing and coding.",
+        "status": "active"
+      },
+      {
+        "id": "operator",
+        "name": "Operator (Desktop Agent)",
+        "version": "Operator v1",
+        "badge": "OTONOM BİLGİSAYAR",
+        "badgeColor": "border-amber-500/40 bg-amber-500/10 text-amber-300",
+        "contextWindow": "128K tokens",
+        "latency": "Agentic Loop",
+        "sweBench": "Computer Use SOTA",
+        "pricing": "Pro / Enterprise",
+        "taglineTr": "Web tarayıcısını ve masaüstü uygulamalarını sizin yerinize otonom kullanan yapay zeka ajanı.",
+        "taglineEn": "Autonomous desktop agent capable of browsing, booking, and executing multi-step desktop workflows.",
+        "status": "frontier"
+      }
+    ],
     "communityIndex": {
       "score": 4.1,
       "scoreFormatted": "4.1",
@@ -533,6 +729,10 @@
   {
     "id": "notebooklm",
     "slug": "notebooklm",
+    "lastAudited": "2026-11",
+    "engineVersion": "NotebookLM Plus (Gemini 2.0 Flash)",
+    "changelogSummary": "Audited Audio Overview dialogue naturalness, grounded PDF cross-referencing accuracy, and enterprise notebook sharing.",
+    "changelogSummaryTr": "Sesli Genel Bakış diyalog doğallığı, PDF çapraz referanslama doğruluğu ve kurumsal not defteri paylaşımı denetlendi.",
     "addedDate": "2026-01-04",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -638,6 +838,10 @@
   {
     "id": "perplexity-ai",
     "slug": "perplexity-ai",
+    "lastAudited": "2026-11",
+    "engineVersion": "Perplexity Deep Research + Sonar",
+    "changelogSummary": "Audited multi-source citation fidelity, Deep Research report synthesis depth, and live web query recency.",
+    "changelogSummaryTr": "Çok kaynaklı alıntı güvenilirliği, Deep Research rapor sentez derinliği ve canlı web sorgusu güncelliği denetlendi.",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -742,6 +946,10 @@
   {
     "id": "deepseek-v3",
     "slug": "deepseek-v3",
+    "lastAudited": "2026-11",
+    "engineVersion": "DeepSeek V3 + R1 (MoE 671B)",
+    "changelogSummary": "Benchmarked 37B active MoE throughput, chain-of-thought verification on complex math, and competitive inference costs.",
+    "changelogSummaryTr": "37B aktif MoE verimi, karmaşık matematikte düşünce zinciri doğrulaması ve rekabetçi çıkarım maliyetleri test edildi.",
     "addedDate": "2026-01-05",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -849,6 +1057,11 @@
   {
     "id": "elevenlabs",
     "slug": "elevenlabs",
+    "lastAudited": "2026-11",
+    "engineVersion": "Eleven Multilingual v3 & Conversational",
+    "changelogSummary": "Tested sub-150ms conversational agent latency, emotional prosody fidelity, and multilingual zero-shot voice cloning.",
+    "changelogSummaryTr": "150ms altı konuşma ajanı gecikmesi, duygusal tonlama sadakati ve çok dilli anlık ses klonlama performansı test edildi.",
+    "lifecycleStatus": "frontier",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -858,7 +1071,7 @@
     "isOpenSource": false,
     "noCreditCard": true,
     "trSupport": true,
-    "name": "ElevenLabs",
+    "name": "ElevenLabs v3",
     "categoryEn": "Audio & Voice AI",
     "categoryTr": "Ses ve Konuşma",
     "categoryEs": "IA de Audio y Voz",
@@ -956,6 +1169,11 @@
   {
     "id": "grok-3",
     "slug": "grok-3",
+    "lastAudited": "2026-11",
+    "engineVersion": "Grok 3 (DeepSearch & Think Mode)",
+    "changelogSummary": "Audited Colossus 100k GPU inference cluster latency, DeepSearch multi-source verification, and chain-of-thought math resilience.",
+    "changelogSummaryTr": "Colossus 100k GPU kümesi çıkarım gecikmesi, DeepSearch çok kaynaklı doğrulaması ve düşünce zinciri matematik performansı denetlendi.",
+    "lifecycleStatus": "frontier",
     "addedDate": "2026-02-18",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -965,7 +1183,7 @@
     "isOpenSource": false,
     "noCreditCard": false,
     "trSupport": true,
-    "name": "Grok 3 (xAI)",
+    "name": "Grok",
     "categoryEn": "Text & Chat AI",
     "categoryTr": "Metin ve Sohbet",
     "categoryEs": "IA de Texto y Chat",
@@ -1037,6 +1255,50 @@
       "Tam özellikli kullanım için X Premium+ üyeliği veya xAI API kredisi gerekmesi",
       "Microsoft veya Google'a kıyasla daha az kurumsal ofis yazılımı entegrasyonu"
     ],
+    "models": [
+      {
+        "id": "grok-3",
+        "name": "Grok 3 (Colossus)",
+        "version": "Grok 3 Think Mode",
+        "badge": "100K GPU SOTA",
+        "badgeColor": "border-amber-500/40 bg-amber-500/10 text-amber-300",
+        "contextWindow": "128K tokens",
+        "latency": "410ms",
+        "sweBench": "64.5%",
+        "pricing": "$3.00 / $15.00 (1M)",
+        "taglineTr": "Colossus 100k GPU süper kümesinde eğitilmiş; Think Mode derin muhakeme ve canlı X verisi analiz eden amiral gemisi.",
+        "taglineEn": "Frontier engine trained on xAI Colossus supercluster with Think Mode reasoning and live X intelligence.",
+        "status": "frontier"
+      },
+      {
+        "id": "grok-3-mini",
+        "name": "Grok 3 Mini",
+        "version": "v3 Mini",
+        "badge": "HIZLI MUHAKEME",
+        "badgeColor": "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+        "contextWindow": "128K tokens",
+        "latency": "180ms",
+        "sweBench": "56.8%",
+        "pricing": "$0.50 / $2.00 (1M)",
+        "taglineTr": "Düşük gecikmeli hızlı çıkarım ve matematiksel problem çözümü için optimize edilmiş kompakt model.",
+        "taglineEn": "Fast reasoning model optimized for low-latency inference and mathematical problem-solving.",
+        "status": "frontier"
+      },
+      {
+        "id": "grok-2",
+        "name": "Grok 2",
+        "version": "v2.0",
+        "badge": "GENEL SOHBET",
+        "badgeColor": "border-secondary bg-secondary text-muted",
+        "contextWindow": "128K tokens",
+        "latency": "350ms",
+        "sweBench": "52.1%",
+        "pricing": "$2.00 / $10.00 (1M)",
+        "taglineTr": "FLUX entegrasyonuyla görsel üreten ve filtresiz sohbet sunan önceki kararlı sürüm.",
+        "taglineEn": "Previous stable generation with integrated FLUX image generation and unfiltered chat.",
+        "status": "active"
+      }
+    ],
     "communityIndex": {
       "score": 4,
       "scoreFormatted": "4.0",
@@ -1063,6 +1325,11 @@
   {
     "id": "gemini-advanced",
     "slug": "gemini-advanced",
+    "lastAudited": "2026-11",
+    "engineVersion": "Gemini Hydrogen / 2.0 Flash / Deep Research",
+    "changelogSummary": "Audited 1M+ multimodal context, real-time voice/video streaming, Flash Thinking reasoning, and frontier Hydrogen multimodal architecture.",
+    "changelogSummaryTr": "1M+ çok modlu bağlam, gerçek zamanlı ses/video akışı, Flash Thinking muhakemesi ve öncü Hydrogen çok modlu mimarisi denetlendi.",
+    "lifecycleStatus": "frontier",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -1072,7 +1339,7 @@
     "isOpenSource": false,
     "noCreditCard": false,
     "trSupport": true,
-    "name": "Google Gemini Advanced",
+    "name": "Google Gemini",
     "categoryEn": "Text & Chat AI",
     "categoryTr": "Metin ve Sohbet",
     "categoryEs": "IA de Texto y Chat",
@@ -1141,6 +1408,50 @@
     "consTr": [
       "Bazı hassas sorgularda güvenlik filtrelerinin bazen aşırı temkinli davranabilmesi",
       "Deep Research kapsamlı analizlerinin tamamlanmasının 3-5 dakika sürebilmesi"
+    ],
+    "models": [
+      {
+        "id": "gemini-hydrogen",
+        "name": "Gemini Hydrogen",
+        "version": "Hydrogen Experimental",
+        "badge": "FRONTIER HYDROGEN",
+        "badgeColor": "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+        "contextWindow": "2,000,000 tokens",
+        "latency": "210ms",
+        "sweBench": "65.4%",
+        "pricing": "API / Pro",
+        "taglineTr": "Google DeepMind'ın yeni nesil Hydrogen çok modlu mimarisi; 2M devasa bellek ve yerel görsel/ses akışı.",
+        "taglineEn": "Next-generation Hydrogen multimodal architecture with native video streaming and 2M token memory.",
+        "status": "frontier"
+      },
+      {
+        "id": "gemini-2-flash",
+        "name": "Gemini 2.0 Flash",
+        "version": "Flash v2.0",
+        "badge": "145MS HIZ ŞAMPİYONU",
+        "badgeColor": "border-emerald-500/40 bg-emerald-500/10 text-emerald-300",
+        "contextWindow": "1,000,000 tokens",
+        "latency": "145ms (Medyan)",
+        "sweBench": "58.7%",
+        "pricing": "$0.10 / $0.40 (1M)",
+        "taglineTr": "Işık hızında 145ms gecikme ve kaya gibi sağlam 1 Milyon token bağlamıyla en ekonomik geliştirici motoru.",
+        "taglineEn": "Ultra-low 145ms latency paired with a massive 1M context window at ground-floor pricing.",
+        "status": "frontier"
+      },
+      {
+        "id": "gemini-2-pro",
+        "name": "Gemini 2.0 Pro",
+        "version": "Pro v2.0",
+        "badge": "DEEP RESEARCH",
+        "badgeColor": "border-violet-500/40 bg-violet-500/10 text-violet-300",
+        "contextWindow": "2,000,000 tokens",
+        "latency": "440ms",
+        "sweBench": "67.2%",
+        "pricing": "$1.25 / $5.00 (1M)",
+        "taglineTr": "Derin araştırma ve onlarca akademik kaynağı çapraz tarayan analitik muhakeme motoru.",
+        "taglineEn": "Deep analytical reasoning and comprehensive multi-source Deep Research capability.",
+        "status": "active"
+      }
     ],
     "communityIndex": {
       "score": 4,
@@ -1275,6 +1586,10 @@
   {
     "id": "windsurf",
     "slug": "windsurf",
+    "lastAudited": "2026-11",
+    "engineVersion": "Cascade 2.0 (Flow Engine)",
+    "changelogSummary": "Evaluated Cascade 2.0 multi-turn collaborative agent flows, terminal sandbox execution, and realtime diff preview.",
+    "changelogSummaryTr": "Cascade 2.0 çok turlu işbirlikçi ajan akışları, terminal sandbox yürütmesi ve gerçek zamanlı diff önizlemesi değerlendirildi.",
     "addedDate": "2026-01-15",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -1592,6 +1907,11 @@
   {
     "id": "sora-openai",
     "slug": "sora-openai",
+    "lastAudited": "2026-11",
+    "engineVersion": "Sora Turbo 1080p / 60fps",
+    "changelogSummary": "Evaluated 1080p realistic physics coherence, camera trajectory steering, and text-to-video prompt temporal persistence.",
+    "changelogSummaryTr": "1080p gerçekçi fizik tutarlılığı, kamera hareket yönlendirmesi ve metinden videoya zamansal istem kalıcılığı değerlendirildi.",
+    "lifecycleStatus": "frontier",
     "addedDate": "2026-01-02",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -1601,7 +1921,7 @@
     "isOpenSource": false,
     "noCreditCard": false,
     "trSupport": true,
-    "name": "OpenAI Sora",
+    "name": "OpenAI Sora Turbo",
     "categoryEn": "Video Generation",
     "categoryTr": "Video Üretimi",
     "categoryEs": "Generación de Video",
@@ -1804,6 +2124,10 @@
   {
     "id": "flux-1",
     "slug": "flux-1",
+    "lastAudited": "2026-11",
+    "engineVersion": "FLUX.1 Pro / Schnell v1.2",
+    "changelogSummary": "Benchmarked typography rendering precision, human anatomy fidelity, and commercial API endpoint latency.",
+    "changelogSummaryTr": "Tipografi işleme hassasiyeti, insan anatomisi doğruluğu ve ticari API uç noktası gecikmesi kıyaslandı.",
     "addedDate": "2026-01-04",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -1911,6 +2235,10 @@
   {
     "id": "v0-vercel",
     "slug": "v0-vercel",
+    "lastAudited": "2026-11",
+    "engineVersion": "v0.3 (Next.js 15 + Tailwind v4)",
+    "changelogSummary": "Tested generative UI rendering speed, full-stack Next.js App Router scaffolding, and Shadcn UI component cohesion.",
+    "changelogSummaryTr": "Üretken arayüz işleme hızı, full-stack Next.js App Router iskeletleme ve Shadcn UI bileşen uyumu test edildi.",
     "addedDate": "2026-01-08",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -2547,6 +2875,10 @@
   {
     "id": "devin-ai",
     "slug": "devin-ai",
+    "lastAudited": "2026-11",
+    "engineVersion": "Devin 2.0 (Cognition Agent)",
+    "changelogSummary": "Stress-tested autonomous GitHub issue resolution, end-to-end dev environment spin-up, and error auto-recovery.",
+    "changelogSummaryTr": "Otonom GitHub issue çözümü, uçtan uca geliştirici ortamı kurulumu ve hata kendi kendini onarma stres testine tabi tutuldu.",
     "addedDate": "2026-01-05",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -2652,6 +2984,10 @@
   {
     "id": "runway-gen-2",
     "slug": "runway-gen-2",
+    "lastAudited": "2026-11",
+    "engineVersion": "Gen-3 Alpha Turbo",
+    "changelogSummary": "Tested sub-second generation latency, Director Mode brush trajectories, and motion brush temporal stability.",
+    "changelogSummaryTr": "Saniye altı üretim gecikmesi, Yönetmen Modu fırça yörüngeleri ve hareket fırçası zamansal kararlılığı test edildi.",
     "addedDate": "2026-01-04",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -2864,6 +3200,10 @@
   {
     "id": "heygen",
     "slug": "heygen",
+    "lastAudited": "2026-11",
+    "engineVersion": "Avatar 3.0 + Interactive AI",
+    "changelogSummary": "Evaluated sub-100ms conversational video latency, photo-realistic lip-sync phoneme alignment, and voice cloning fidelity.",
+    "changelogSummaryTr": "100ms altı etkileşimli video gecikmesi, fotogerçekçi dudak senkronizasyonu ve ses klonlama doğruluğu değerlendirildi.",
     "addedDate": "2026-01-06",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -2969,6 +3309,10 @@
   {
     "id": "replit-agent",
     "slug": "replit-agent",
+    "lastAudited": "2026-11",
+    "engineVersion": "Replit Agent v3 (Autonomous Stack)",
+    "changelogSummary": "Audited end-to-end full-stack app deployment from single prompt, Postgres integration, and live log monitoring.",
+    "changelogSummaryTr": "Tek istemden uçtan uca full-stack uygulama yayını, Postgres entegrasyonu ve canlı log izleme denetlendi.",
     "addedDate": "2026-01-18",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -3074,6 +3418,10 @@
   {
     "id": "github-copilot",
     "slug": "github-copilot",
+    "lastAudited": "2026-11",
+    "engineVersion": "Copilot Workspace Agents (v2.2)",
+    "changelogSummary": "Tested multi-repository agent pull-request planning, terminal integration, and enterprise policy enforcement.",
+    "changelogSummaryTr": "Çoklu repo ajan PR planlaması, terminal entegrasyonu ve kurumsal ilke uygulama yetenekleri test edildi.",
     "addedDate": "2026-01-01",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -3179,6 +3527,11 @@
   {
     "id": "suno-ai",
     "slug": "suno-ai",
+    "lastAudited": "2026-11",
+    "engineVersion": "Suno v4 Studio Audio Engine",
+    "changelogSummary": "Audited 48kHz stereo master audio clarity, stem separation precision, and multi-genre lyric continuation.",
+    "changelogSummaryTr": "48kHz stereo stüdyo ses berraklığı, vokal/enstrüman kanal ayrımı ve çok türde şarkı sözü devamlılığı denetlendi.",
+    "lifecycleStatus": "frontier",
     "addedDate": "2026-01-02",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -3188,7 +3541,7 @@
     "isOpenSource": false,
     "noCreditCard": true,
     "trSupport": true,
-    "name": "Suno AI (v3.5 & v4)",
+    "name": "Suno v4",
     "categoryEn": "Audio & Voice AI",
     "categoryTr": "Ses ve Konuşma",
     "categoryEs": "IA de Audio y Voz",
@@ -3286,6 +3639,10 @@
   {
     "id": "google-veo-3-1",
     "slug": "google-veo-3-1",
+    "lastAudited": "2026-11",
+    "engineVersion": "Veo 3.1",
+    "changelogSummary": "Evaluated cinematic physics simulation, long-sequence prompt persistence, and native 4K spatial audio synthesis.",
+    "changelogSummaryTr": "Sinematik fizik simülasyonu, uzun sekans istem kalıcılığı ve yerel 4K uzamsal ses sentezi değerlendirildi.",
     "addedDate": "2026-07-31",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -3393,15 +3750,19 @@
   {
     "id": "krea-ai",
     "slug": "krea-ai",
+    "lastAudited": "2026-11",
+    "engineVersion": "Real-time Canvas 2.5 + Scene Generator",
+    "changelogSummary": "Verified zero-latency canvas preview, 4K enhancer artifact suppression, and style transfer responsiveness.",
+    "changelogSummaryTr": "Sıfır gecikmeli tuval önizlemesi, 4K geliştirici yapay doku bastırma ve stil aktarımı tepkiselliği doğrulandı.",
     "addedDate": "2026-01-08",
-    "lastUpdated": "2026-08-24",
+    "lastUpdated": "2026-10-01",
     "seoOptimized": true,
     "isFeatured": true,
     "isVerified": true,
     "hasApi": true,
     "isOpenSource": false,
     "noCreditCard": true,
-    "trSupport": true,
+    "trSupport": false,
     "name": "Krea AI",
     "categoryEn": "Video Generation",
     "categoryTr": "Video Üretimi",
@@ -3412,26 +3773,27 @@
     "priceEn": "Free / $35/mo (Pro) / $165/mo (Max)",
     "priceTr": "Ücretsiz / 35$/ay (Pro) / 165$/ay (Max)",
     "priceEs": "Gratis / $35/mes (Pro) / $165/mes (Max)",
-    "affiliateLink": "https://krea.ai",
-    "descriptionEn": "Krea AI is a high-speed generative visual suite featuring sub-100ms Realtime Canvas generation, Krea Agent for cinematic videos, and the revolutionary AI Enhancer. It merges immediate creative ideation with high-fidelity production tools.",
-    "descriptionTr": "Krea AI, milisaniyeler içinde tepki veren gerçek zamanlı çizim tuvali, Krea Agent ile gelişmiş video sentezi ve zayıf/bulanık görselleri 4K kalitesine taşıyan efsanevi AI Görsel İyileştirici sunan güçlü bir stüdyodur. Anlık fikir üretimi ile profesyonel prodüksiyonu birleştirir.",
-    "descriptionEs": "Krea AI es una suite visual ultrarrápida con generación en tiempo real en menos de 100ms, generación de videos mediante Krea Agent y un revolucionario mejorador y escalador 4K de imágenes.",
+    "affiliateLink": "https://www.krea.ai/features/ai-video-generator",
+    "descriptionEn": "Krea AI is a high-speed generative visual suite featuring sub-100ms Realtime Canvas, Krea Agent multimodal orchestration, an integrated 8-track video timeline editor, Realtime Director live steering, and the AI Enhancer 2.0.",
+    "descriptionTr": "Krea AI, 100ms altı gerçek zamanlı çizim tuvali, tek komutla çoklu model orkestrasyonu yapan Krea Agent, yerleşik 8 kanallı video timeline editörü, 'Realtime Director' canlı video yönlendirmesi ve 4K AI Enhancer 2.0 sunan yeni nesil kreatif stüdyodur.",
+    "descriptionEs": "Krea AI es una suite visual con generación en tiempo real en menos de 100ms, Krea Agent multimodelo, editor nativo de 8 pistas, Realtime Director y escalador AI Enhancer 2.0.",
     "featuresEn": [
-      "Sub-100ms Real-Time Generative Canvas (Paint, Webcam & Screen Share Inputs)",
-      "AI Enhancer & Upscaler (Restores Ultra-Sharp Detail to Blurry Images)",
-      "Keyframe Animation & Camera Video Generation",
-      "Custom Style Training & Color Composition Tools"
+      "Sub-100ms Real-Time Generative Canvas (Paint, Webcam & 3D Screen Share)",
+      "Krea Agent & Built-in 8-Track Multi-Track Video Timeline Editor",
+      "Realtime Director & Generative Extend (Live Video Prompting)",
+      "AI Enhancer 2.0 (4K Micro-Texture & Detail Reconstruction)"
     ],
     "featuresTr": [
-      "Gerçek Zamanlı Üretim Tuvali (Çizim, Web Kamerası ve Ekran Paylaşımı)",
-      "AI Enhancer & Upscaler (Bulanık Görsellere İnanılmaz Netlik Ekler)",
-      "Krea Agent Modu ve Video Modifikasyonu",
-      "Realtime Edit (Bölgesel Değişiklikler)"
+      "100ms Altı Gerçek Zamanlı Tuval (Çizim, Web Kamerası ve 3D Ekran Paylaşımı)",
+      "Krea Agent ve Yerleşik 8 Kanallı Video Timeline Editörü",
+      "Realtime Director ve Generative Extend ile Canlı Video Yönlendirme",
+      "AI Enhancer 2.0 (4K Doku ve Detay Rekonstrüksiyonu)"
     ],
     "badges": [
+      "Krea Agent 2026",
       "Sub-100ms Realtime",
-      "AI Enhancer",
-      "Instant AI"
+      "8-Track Video Studio",
+      "4K AI Enhancer"
     ],
     "scoreBreakdown": {
       "developerActivity": 3.4,
@@ -3605,217 +3967,6 @@
       "throughputFormatted": "~97 tok/s",
       "badgeLabelTr": "Ajan Yürütme Motoru",
       "badgeLabelEn": "Agentic Execution Engine"
-    }
-  },
-  {
-    "id": "gpt-4o",
-    "slug": "gpt-4o",
-    "addedDate": "2026-01-03",
-    "lastUpdated": "2026-08-24",
-    "seoOptimized": true,
-    "isFeatured": false,
-    "isVerified": true,
-    "hasApi": true,
-    "isOpenSource": false,
-    "noCreditCard": true,
-    "trSupport": true,
-    "name": "OpenAI GPT-4o",
-    "categoryEn": "Text & Chat AI",
-    "categoryTr": "Metin ve Sohbet",
-    "categoryEs": "IA de Texto y Chat",
-    "rating": 4.2,
-    "reviews": 73,
-    "logo": "https://www.google.com/s2/favicons?domain=openai.com&sz=128",
-    "priceEn": "Free Tier / $20/mo (Plus) / API Usage",
-    "priceTr": "Ücretsiz Katman / 20$/ay (Plus) / API Kullanımı",
-    "priceEs": "Plan Gratuito / $20/mes (Plus) / Uso de API",
-    "affiliateLink": "https://openai.com/gpt-4o",
-    "descriptionEn": "GPT-4o ('omni') is OpenAI's flagship multimodal foundation model, processing and generating text, audio, image, and video natively with sub-second response times.",
-    "descriptionTr": "GPT-4o ('omni'), OpenAI tarafından geliştirilen; metin, ses, görsel ve videoyu doğrudan tek bir sinir ağında işleyen ve anlık hızla yanıt veren amiral gemisi çok modlu yapay zeka modelidir.",
-    "descriptionEs": "GPT-4o es el modelo insignia multimodal de OpenAI con procesamiento nativo de texto, voz y visión en tiempo real.",
-    "featuresEn": [
-      "Native Multimodal Omnimodel (Text, Audio, Vision & Video)",
-      "Sub-Second Response Times (2x Faster than Previous GPT-4)",
-      "Advanced Vision Understanding & Real-Time Screen Interpretation",
-      "50% Lower API Pricing Compared to Legacy GPT-4 Turbo"
-    ],
-    "featuresTr": [
-      "Doğal Çok Modlu Omni Mimari (Metin, Ses, Görsel ve Video)",
-      "Saniyenin Altında Yanıt Hızı (Eski GPT-4'e Göre 2 Kat Hızlı)",
-      "Gelişmiş Görsel Anlama ve Gerçek Zamanlı Ekran Analizi",
-      "Eski GPT-4 Turbo'ya Kıyasla %50 Daha Uygun API Fiyatı"
-    ],
-    "badges": [
-      "Omnimodel",
-      "Realtime Vision",
-      "Fast Streaming"
-    ],
-    "scoreBreakdown": {
-      "developerActivity": 4.3,
-      "communityTrust": 4.3,
-      "releaseVelocity": 4.3,
-      "documentationQuality": 4.1,
-      "reliability": 4.3
-    },
-    "tagsEn": [
-      "GPT-4o",
-      "OpenAI",
-      "Multimodal",
-      "Vision AI",
-      "Omnimodel",
-      "Voice AI"
-    ],
-    "tagsTr": [
-      "GPT-4o",
-      "OpenAI",
-      "Çok Modlu",
-      "Görsel Yapay Zeka",
-      "Ses Modu"
-    ],
-    "prosEn": [
-      "Instantaneous token streaming with minimal latency overhead",
-      "Outstanding vision and document parsing accuracy across charts and PDFs",
-      "Free tier available to all standard ChatGPT web and mobile users"
-    ],
-    "prosTr": [
-      "Minimum gecikmeyle neredeyse anında başlayan akıcı yanıt hızı",
-      "Grafikleri, tabloları ve PDF'leri anlamada üstün görsel analiz doğruluğu",
-      "Tüm standart ChatGPT kullanıcıları için ücretsiz katmanda sunulması"
-    ],
-    "consEn": [
-      "Free users have dynamic rate limits that throttle during peak global hours",
-      "Complex multi-step coding is better handled with extended reasoning models (o1/Claude 3.7)"
-    ],
-    "consTr": [
-      "Ücretsiz kullanıcılar için yoğun saatlerde mesaj limitlerinin daralması",
-      "Aşırı karmaşık çok aşamalı yazılım görevlerinde o1 veya Claude 3.7'nin tercih edilmesi"
-    ],
-    "communityIndex": {
-      "score": 4.2,
-      "scoreFormatted": "4.2",
-      "confidenceLevel": "High",
-      "confidenceLabelTr": "Yüksek Güvenilirlik",
-      "confidenceLabelEn": "High Confidence",
-      "percentile": 84,
-      "methodologyVersion": "Metodoloji v3.0",
-      "phases": {
-        "phase1Ecosystem": 4.3,
-        "phase2StressSLA": 4.3,
-        "phase3Security": 3.8,
-        "phase4ExpertHuman": 4.3
-      }
-    },
-    "telemetry": {
-      "avgLatencyFormatted": "~239 ms",
-      "uptimeSla": "99.88%",
-      "throughputFormatted": "~89 tok/s",
-      "badgeLabelTr": "Bulut SLA",
-      "badgeLabelEn": "Cloud SLA"
-    }
-  },
-  {
-    "id": "claude-3-5-opus",
-    "slug": "claude-3-5-opus",
-    "addedDate": "2026-01-02",
-    "lastUpdated": "2026-08-24",
-    "seoOptimized": true,
-    "isFeatured": false,
-    "isVerified": true,
-    "hasApi": true,
-    "isOpenSource": false,
-    "noCreditCard": false,
-    "trSupport": true,
-    "name": "Claude 3.5 Opus",
-    "categoryEn": "Text & Chat AI",
-    "categoryTr": "Metin ve Sohbet",
-    "categoryEs": "IA de Texto y Chat",
-    "rating": 4.2,
-    "reviews": 45,
-    "logo": "https://www.google.com/s2/favicons?domain=anthropic.com&sz=128",
-    "priceEn": "$20.00/mo (Claude Pro) / API Usage",
-    "priceTr": "20$/ay (Claude Pro) / API Kullanımı",
-    "priceEs": "$20.00/mes (Claude Pro) / Uso de API",
-    "affiliateLink": "https://claude.ai",
-    "descriptionEn": "Claude 3.5 Opus is Anthropic's heavyweight foundation model designed for deep scientific reasoning, complex codebase refactoring, and high-stakes executive analysis.",
-    "descriptionTr": "Claude 3.5 Opus, Anthropic tarafından geliştirilen; derin bilimsel akıl yürütme, devasa kod tabanı refactoring işlemleri ve üst düzey stratejik analiz için tasarlanmış amiral gemisi modeldir.",
-    "descriptionEs": "Claude 3.5 Opus es el modelo de máxima capacidad de Anthropic para razonamiento científico profundo y análisis estratégico.",
-    "featuresEn": [
-      "Heavyweight Frontier Intelligence for Complex Scientific & Legal Tasks",
-      "200K Context Window with Deep Cross-Document Synthesis",
-      "Nuanced Philosophical & Strategic Advisory Capabilities",
-      "Integrated Artifacts Workspace for Code, Math & Interactive Diagrams"
-    ],
-    "featuresTr": [
-      "Karmaşık Bilimsel ve Hukuki Görevler İçin Ağır Sıklet Zeka Seviyesi",
-      "Derin Belgeler Arası Sentez Sunan 200.000 Token Bağlam Penceresi",
-      "İncelikli Stratejik ve Felsefi Danışmanlık Yetenekleri",
-      "Kod, Matematik ve Şemalar İçin Entegre Artifacts Çalışma Alanı"
-    ],
-    "badges": [
-      "Heavyweight AI",
-      "Deep Reasoning",
-      "Anthropic"
-    ],
-    "scoreBreakdown": {
-      "developerActivity": 4.1,
-      "communityTrust": 4.3,
-      "releaseVelocity": 4.3,
-      "documentationQuality": 4.1,
-      "reliability": 4.3
-    },
-    "tagsEn": [
-      "Claude 3.5 Opus",
-      "Anthropic",
-      "Heavyweight LLM",
-      "Executive AI",
-      "Deep Analysis"
-    ],
-    "tagsTr": [
-      "Claude 3.5 Opus",
-      "Anthropic",
-      "Derin Analiz",
-      "Strateji",
-      "Yapay Zeka"
-    ],
-    "prosEn": [
-      "Exceptional depth of thought on nuanced legal, financial, and philosophical documents",
-      "Handles complex multi-step instructions without dropping constraints",
-      "Produces eloquent, human-quality academic and strategic prose"
-    ],
-    "prosTr": [
-      "Hukuk, finans ve felsefe gibi incelikli alanlarda olağanüstü düşünce derinliği",
-      "Çok adımlı ve karmaşık kısıtlamaları asla unutmadan eksiksiz tamamlama",
-      "Akademik ve kurumsal düzeyde kusursuz edebi anlatım kalitesi"
-    ],
-    "consEn": [
-      "Higher token pricing on API compared to Sonnet or Flash models",
-      "Slightly longer generation latency due to dense model parameters"
-    ],
-    "consTr": [
-      "API kullanımında Sonnet veya Flash modellere kıyasla daha yüksek token maliyeti",
-      "Büyük parametre boyutu nedeniyle ilk yanıt süresinin biraz daha uzun olması"
-    ],
-    "communityIndex": {
-      "score": 4.2,
-      "scoreFormatted": "4.2",
-      "confidenceLevel": "Moderate",
-      "confidenceLabelTr": "Doğrulanmış",
-      "confidenceLabelEn": "Verified",
-      "percentile": 84,
-      "methodologyVersion": "Metodoloji v3.0",
-      "phases": {
-        "phase1Ecosystem": 4.2,
-        "phase2StressSLA": 4.3,
-        "phase3Security": 3.8,
-        "phase4ExpertHuman": 4.2
-      }
-    },
-    "telemetry": {
-      "avgLatencyFormatted": "~246 ms",
-      "uptimeSla": "99.89%",
-      "throughputFormatted": "~86 tok/s",
-      "badgeLabelTr": "Bulut SLA",
-      "badgeLabelEn": "Cloud SLA"
     }
   },
   {
@@ -4037,6 +4188,8 @@
   {
     "id": "google-veo-2",
     "slug": "google-veo-2",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-10",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -4142,6 +4295,10 @@
   {
     "id": "kling-ai",
     "slug": "kling-ai",
+    "lastAudited": "2026-11",
+    "engineVersion": "Kling 1.6 Pro",
+    "changelogSummary": "Audited 1080p 60fps cinematic video coherence, camera motion control reliability, and text-to-video prompt fidelity.",
+    "changelogSummaryTr": "1080p 60fps sinematik video tutarlılığı, kamera hareket kontrolü güvenilirliği ve metinden videoya prompt sadakati denetlendi.",
     "addedDate": "2026-01-08",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -4355,6 +4512,8 @@
   {
     "id": "chatdev",
     "slug": "chatdev",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-13",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -5099,6 +5258,8 @@
   {
     "id": "sweep",
     "slug": "sweep",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-09",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -7225,6 +7386,8 @@
   {
     "id": "pi-ai",
     "slug": "pi-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-15",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -8067,113 +8230,10 @@
     }
   },
   {
-    "id": "grok-2",
-    "slug": "grok-2",
-    "addedDate": "2026-01-06",
-    "lastUpdated": "2026-08-24",
-    "seoOptimized": true,
-    "isFeatured": false,
-    "isVerified": true,
-    "hasApi": true,
-    "isOpenSource": false,
-    "noCreditCard": false,
-    "trSupport": true,
-    "name": "Grok 2 (xAI)",
-    "categoryEn": "Text & Chat AI",
-    "categoryTr": "Metin ve Sohbet",
-    "categoryEs": "IA de Texto y Chat",
-    "rating": 3.5,
-    "reviews": 67,
-    "logo": "https://www.google.com/s2/favicons?domain=x.ai&sz=128",
-    "priceEn": "Included with X Premium ($8/mo)",
-    "priceTr": "X Premium ile Dahil (150 TL/ay)",
-    "priceEs": "Incluido con X Premium (8 €/mes)",
-    "affiliateLink": "https://x.ai",
-    "descriptionEn": "Grok 2 is xAI's conversational AI assistant on X featuring real-time social intelligence, unfiltered reasoning, and photorealistic FLUX image generation.",
-    "descriptionTr": "Grok 2, xAI tarafından sunulan; X platformunda gerçek zamanlı sosyal bilgi akışı, sansürsüz akıl yürütme ve yüksek kaliteli FLUX görsel üretimi sağlayan yapay zeka modelidir.",
-    "descriptionEs": "Grok 2 es el asistente de IA de xAI con información en tiempo real de X y generación de imágenes con FLUX.",
-    "featuresEn": [
-      "Real-Time Social Intelligence Grounded in Live X Posts",
-      "Integrated FLUX.1 Photorealistic Image Generation",
-      "Unfiltered, Direct & Candid Conversational Style",
-      "Grok 2 Mini for Fast, Low-Latency Web Answers"
-    ],
-    "featuresTr": [
-      "Canlı X Paylaşımlarıyla Desteklenen Gerçek Zamanlı Sosyal Zeka",
-      "Entegre FLUX.1 Fotogerçekçi Görsel Üretimi",
-      "Doğrudan, Samimi ve Kısıtlamasız İletişim Tarzı",
-      "Hızlı ve Düşük Gecikmeli Yanıtlar İçin Grok 2 Mini"
-    ],
-    "badges": [
-      "Real-Time X",
-      "FLUX Images",
-      "Unfiltered"
-    ],
-    "scoreBreakdown": {
-      "developerActivity": 3.6,
-      "communityTrust": 3.6,
-      "releaseVelocity": 3.6,
-      "documentationQuality": 3.4,
-      "reliability": 3.6
-    },
-    "tagsEn": [
-      "Grok 2",
-      "xAI",
-      "FLUX",
-      "Social Intelligence",
-      "X Premium"
-    ],
-    "tagsTr": [
-      "Grok 2",
-      "xAI",
-      "FLUX",
-      "Sosyal Medya",
-      "X Premium"
-    ],
-    "prosEn": [
-      "Fastest access to breaking news and viral discussions on X",
-      "FLUX image generation is fast, photorealistic, and creative",
-      "Affordable entry point included with standard X Premium ($8/mo)"
-    ],
-    "prosTr": [
-      "X üzerindeki son dakika haberlerine ve viral gündemlere en hızlı erişim",
-      "FLUX motoruyla hızlı, fotogerçekçi ve yaratıcı görsel üretimi",
-      "Standart X Premium (aylık 8$) aboneliğine dahil ekonomik erişim"
-    ],
-    "consEn": [
-      "Requires an active X social account for web chat access",
-      "Complex coding and reasoning tasks are better served by the newer Grok 3 flagship"
-    ],
-    "consTr": [
-      "Web sohbetini kullanmak için aktif bir X (Twitter) hesabı gerekmesi",
-      "Karmaşık kodlama ve derin mantık görevlerinde yeni Grok 3'ün tercih edilmesi"
-    ],
-    "communityIndex": {
-      "score": 3.7,
-      "scoreFormatted": "3.7",
-      "confidenceLevel": "High",
-      "confidenceLabelTr": "Yüksek Güvenilirlik",
-      "confidenceLabelEn": "High Confidence",
-      "percentile": 74,
-      "methodologyVersion": "Metodoloji v3.0",
-      "phases": {
-        "phase1Ecosystem": 3.6,
-        "phase2StressSLA": 3.6,
-        "phase3Security": 3.8,
-        "phase4ExpertHuman": 3.7
-      }
-    },
-    "telemetry": {
-      "avgLatencyFormatted": "~230 ms",
-      "uptimeSla": "99.11%",
-      "throughputFormatted": "~80 tok/s",
-      "badgeLabelTr": "Bulut SLA",
-      "badgeLabelEn": "Cloud SLA"
-    }
-  },
-  {
     "id": "brave-leo-ai",
     "slug": "brave-leo-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-10",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -8279,6 +8339,8 @@
   {
     "id": "duckduckgo-ai-chat",
     "slug": "duckduckgo-ai-chat",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-09",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -8385,6 +8447,8 @@
   {
     "id": "browse-ai",
     "slug": "browse-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-06",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -8811,6 +8875,8 @@
   {
     "id": "taskade-ai",
     "slug": "taskade-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-26",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9023,6 +9089,8 @@
   {
     "id": "murf-ai",
     "slug": "murf-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-06",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9237,6 +9305,8 @@
   {
     "id": "convai",
     "slug": "convai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-08",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9346,6 +9416,8 @@
   {
     "id": "character-ai",
     "slug": "character-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-14",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9451,6 +9523,8 @@
   {
     "id": "surfer-seo",
     "slug": "surfer-seo",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-08",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9556,6 +9630,8 @@
   {
     "id": "inworld-ai",
     "slug": "inworld-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-07",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9664,6 +9740,8 @@
   {
     "id": "agent-gpt",
     "slug": "agent-gpt",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-17",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9769,6 +9847,8 @@
   {
     "id": "pictory",
     "slug": "pictory",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-07",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9874,6 +9954,8 @@
   {
     "id": "writesonic",
     "slug": "writesonic",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-05",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -9979,6 +10061,8 @@
   {
     "id": "jasper-ai",
     "slug": "jasper-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-05",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10084,6 +10168,8 @@
   {
     "id": "godmode-space",
     "slug": "godmode-space",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-25",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10189,6 +10275,8 @@
   {
     "id": "baby-agi",
     "slug": "baby-agi",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-19",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10294,6 +10382,8 @@
   {
     "id": "cognosys",
     "slug": "cognosys",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-21",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10399,6 +10489,8 @@
   {
     "id": "replika",
     "slug": "replika",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-16",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10504,6 +10596,8 @@
   {
     "id": "anyword",
     "slug": "anyword",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-07",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10609,6 +10703,8 @@
   {
     "id": "hyperwrite",
     "slug": "hyperwrite",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-27",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,
@@ -10714,6 +10810,8 @@
   {
     "id": "copy-ai",
     "slug": "copy-ai",
+    "isArchived": true,
+    "lifecycleStatus": "archived",
     "addedDate": "2026-01-06",
     "lastUpdated": "2026-08-24",
     "seoOptimized": true,

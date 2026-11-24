@@ -7,8 +7,50 @@
     "url": "https://agentcritiq.com"
   },
   "methodology": "https://agentcritiq.com/about#methodology",
-  "published": "2026-09-30T19:37:34.441Z",
+  "published": "2026-11-24T18:17:18.064Z",
   "tools": [
+    {
+      "id": "runninghub",
+      "name": "RunningHub",
+      "slug": "runninghub",
+      "category": "Image Generation",
+      "description": "RunningHub is a high-performance cloud AI platform providing serverless ComfyUI workflow execution, rhTV infinite node canvas, and multi-model image and video synthesis without local GPU constraints.",
+      "price": "Free Trial ($20 Test Credits) / Credit-Based",
+      "rating": 4.4,
+      "reviews": 28,
+      "communityIndex": 4.3,
+      "communityConfidence": "Verified",
+      "methodologyPhases": {
+        "phase1Ecosystem": 4.4,
+        "phase2StressSLA": 4.4,
+        "phase3Security": 3.8,
+        "phase4ExpertHuman": 4.3
+      },
+      "sla": "99.95%",
+      "latency": "~238 ms",
+      "throughput": "~68 tok/s",
+      "tags": [
+        "ComfyUI",
+        "Cloud GPU",
+        "rhTV Canvas",
+        "Flux AI",
+        "Video Generation",
+        "Image Generation"
+      ],
+      "pros": [
+        "Zero local VRAM requirement: Run 24GB+ heavy ComfyUI pipelines effortlessly in the cloud",
+        "rhTV infinite canvas bridges complex node architectures into an intuitive visual workspace",
+        "Generous initial trial credits allowing thorough hands-on validation across image and video models"
+      ],
+      "cons": [
+        "Credit consumption scales rapidly when chaining high-step video models and 4K upscaling",
+        "Requires familiarity with node-based ComfyUI logic to extract maximum creative control"
+      ],
+      "hasApi": true,
+      "isOpenSource": false,
+      "reviewUrl": "https://agentcritiq.com/review/runninghub",
+      "officialUrl": "https://agentcritiq.com/go/runninghub"
+    },
     {
       "id": "cursor",
       "name": "Cursor",
@@ -47,13 +89,12 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/cursor",
       "officialUrl": "https://agentcritiq.com/go/cursor"
     },
     {
       "id": "claude-3-5-sonnet",
-      "name": "Claude 3.7 Sonnet & 3.5 Sonnet",
+      "name": "Claude",
       "slug": "claude-3-5-sonnet",
       "category": "Text & Chat AI",
       "description": "Claude 3.7 Sonnet is Anthropic's state-of-the-art hybrid reasoning model, offering instantaneous responses alongside extended thinking mode, Artifacts workspace, and elite coding performance.",
@@ -90,7 +131,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/claude-3-5-sonnet",
       "officialUrl": "https://agentcritiq.com/go/claude-3-5-sonnet"
     },
@@ -133,55 +173,12 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/midjourney",
       "officialUrl": "https://agentcritiq.com/go/midjourney"
     },
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "slug": "claude-code",
-      "category": "Coding & Dev Agents",
-      "description": "Claude Code is Anthropic's official agentic command-line tool that operates directly in your terminal to understand, edit, test, and commit code autonomously.",
-      "price": "Free CLI / API Usage (Anthropic)",
-      "rating": 4.2,
-      "reviews": 37,
-      "communityIndex": 4.3,
-      "communityConfidence": "Verified",
-      "methodologyPhases": {
-        "phase1Ecosystem": 4.3,
-        "phase2StressSLA": 4.3,
-        "phase3Security": 4.5,
-        "phase4ExpertHuman": 4.2
-      },
-      "sla": "99.92%",
-      "latency": "~168 ms",
-      "throughput": "~113 tok/s",
-      "tags": [
-        "Anthropic",
-        "Claude Code",
-        "CLI Agent",
-        "Autonomous Coding",
-        "Terminal AI"
-      ],
-      "pros": [
-        "No GUI overhead: lightning-fast terminal-first operation",
-        "Exceptional reasoning on complex legacy code refactoring",
-        "Direct integration with git branch creation and commit messages"
-      ],
-      "cons": [
-        "Requires active Anthropic API key with sufficient token balance",
-        "Can consume significant tokens during deep codebase traversals"
-      ],
-      "hasApi": true,
-      "isOpenSource": true,
-      "isSponsored": false,
-      "reviewUrl": "https://agentcritiq.com/review/claude-code",
-      "officialUrl": "https://agentcritiq.com/go/claude-code"
-    },
-    {
       "id": "chatgpt-plus",
-      "name": "ChatGPT Plus",
+      "name": "ChatGPT",
       "slug": "chatgpt-plus",
       "category": "Text & Chat AI",
       "description": "ChatGPT Plus is OpenAI's flagship subscription unlocking GPT-4o, OpenAI o1, o3-mini, GPT-4.5, Canvas collaborative workspace, and Advanced Voice Mode.",
@@ -218,7 +215,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/chatgpt-plus",
       "officialUrl": "https://agentcritiq.com/go/chatgpt-plus"
     },
@@ -260,7 +256,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/notebooklm",
       "officialUrl": "https://agentcritiq.com/go/notebooklm"
     },
@@ -302,7 +297,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/perplexity-ai",
       "officialUrl": "https://agentcritiq.com/go/perplexity-ai"
     },
@@ -345,13 +339,12 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/deepseek-v3",
       "officialUrl": "https://agentcritiq.com/go/deepseek-v3"
     },
     {
       "id": "elevenlabs",
-      "name": "ElevenLabs",
+      "name": "ElevenLabs v3",
       "slug": "elevenlabs",
       "category": "Audio & Voice AI",
       "description": "ElevenLabs is the undisputed industry leader in AI voice synthesis, offering lifelike multilingual Text-to-Speech, Instant Voice Cloning, Dubbing Studio, Sound Effects, and Conversational AI agents.",
@@ -388,13 +381,12 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/elevenlabs",
       "officialUrl": "https://agentcritiq.com/go/elevenlabs"
     },
     {
       "id": "grok-3",
-      "name": "Grok 3 (xAI)",
+      "name": "Grok",
       "slug": "grok-3",
       "category": "Text & Chat AI",
       "description": "Grok 3 is xAI's flagship AI model trained on the Colossus supercluster, featuring Think Mode deliberate reasoning, DeepSearch real-time intelligence, and unconstrained analysis.",
@@ -431,13 +423,12 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/grok-3",
       "officialUrl": "https://agentcritiq.com/go/grok-3"
     },
     {
       "id": "gemini-advanced",
-      "name": "Google Gemini Advanced",
+      "name": "Google Gemini",
       "slug": "gemini-advanced",
       "category": "Text & Chat AI",
       "description": "Gemini Advanced is Google DeepMind's flagship AI subscription powered by Gemini 2.0 Pro and Flash Thinking, featuring an unprecedented 2 Million token context window and Deep Research.",
@@ -473,7 +464,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/gemini-advanced",
       "officialUrl": "https://agentcritiq.com/go/gemini-advanced"
     },
@@ -516,7 +506,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/n8n",
       "officialUrl": "https://agentcritiq.com/go/n8n"
     },
@@ -558,7 +547,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/windsurf",
       "officialUrl": "https://agentcritiq.com/go/windsurf"
     },
@@ -601,7 +589,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/langchain",
       "officialUrl": "https://agentcritiq.com/go/langchain"
     },
@@ -643,13 +630,12 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/bolt-new",
       "officialUrl": "https://agentcritiq.com/go/bolt-new"
     },
     {
       "id": "sora-openai",
-      "name": "OpenAI Sora",
+      "name": "OpenAI Sora Turbo",
       "slug": "sora-openai",
       "category": "Video Generation",
       "description": "OpenAI Sora is a groundbreaking text-to-video diffusion model capable of generating full 1080p cinematic scenes with realistic physics, complex camera motion, and multi-shot consistency.",
@@ -686,7 +672,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/sora-openai",
       "officialUrl": "https://agentcritiq.com/go/sora-openai"
     },
@@ -728,7 +713,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/open-interpreter",
       "officialUrl": "https://agentcritiq.com/go/open-interpreter"
     },
@@ -771,7 +755,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/flux-1",
       "officialUrl": "https://agentcritiq.com/go/flux-1"
     },
@@ -814,7 +797,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/v0-vercel",
       "officialUrl": "https://agentcritiq.com/go/v0-vercel"
     },
@@ -856,7 +838,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/cline",
       "officialUrl": "https://agentcritiq.com/go/cline"
     },
@@ -899,7 +880,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/gamma-app",
       "officialUrl": "https://agentcritiq.com/go/gamma-app"
     },
@@ -942,7 +922,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/agentops",
       "officialUrl": "https://agentcritiq.com/go/agentops"
     },
@@ -984,7 +963,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/lovable",
       "officialUrl": "https://agentcritiq.com/go/lovable"
     },
@@ -1026,7 +1004,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/zed-ai",
       "officialUrl": "https://agentcritiq.com/go/zed-ai"
     },
@@ -1068,7 +1045,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/devin-ai",
       "officialUrl": "https://agentcritiq.com/go/devin-ai"
     },
@@ -1111,7 +1087,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/runway-gen-2",
       "officialUrl": "https://agentcritiq.com/go/runway-gen-2"
     },
@@ -1153,7 +1128,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/antigravity-ai",
       "officialUrl": "https://agentcritiq.com/go/antigravity-ai"
     },
@@ -1195,7 +1169,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/heygen",
       "officialUrl": "https://agentcritiq.com/go/heygen"
     },
@@ -1237,7 +1210,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/replit-agent",
       "officialUrl": "https://agentcritiq.com/go/replit-agent"
     },
@@ -1279,13 +1251,12 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/github-copilot",
       "officialUrl": "https://agentcritiq.com/go/github-copilot"
     },
     {
       "id": "suno-ai",
-      "name": "Suno AI (v3.5 & v4)",
+      "name": "Suno v4",
       "slug": "suno-ai",
       "category": "Audio & Voice AI",
       "description": "Suno AI is the viral pioneer in generative music creation, capable of generating full, radio-ready 4-minute songs with vocals, instruments, harmonies, and lyrics in any musical genre.",
@@ -1322,7 +1293,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/suno-ai",
       "officialUrl": "https://agentcritiq.com/go/suno-ai"
     },
@@ -1365,7 +1335,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/google-veo-3-1",
       "officialUrl": "https://agentcritiq.com/go/google-veo-3-1"
     },
@@ -1374,7 +1343,7 @@
       "name": "Krea AI",
       "slug": "krea-ai",
       "category": "Video Generation",
-      "description": "Krea AI is a high-speed generative visual suite featuring sub-100ms Realtime Canvas generation, Krea Agent for cinematic videos, and the revolutionary AI Enhancer. It merges immediate creative ideation with high-fidelity production tools.",
+      "description": "Krea AI is a high-speed generative visual suite featuring sub-100ms Realtime Canvas, Krea Agent multimodal orchestration, an integrated 8-track video timeline editor, Realtime Director live steering, and the AI Enhancer 2.0.",
       "price": "Free / $35/mo (Pro) / $165/mo (Max)",
       "rating": 3.5,
       "reviews": 63,
@@ -1411,7 +1380,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/krea-ai",
       "officialUrl": "https://agentcritiq.com/go/krea-ai"
     },
@@ -1453,94 +1421,8 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/microsoft-autogen",
       "officialUrl": "https://agentcritiq.com/go/microsoft-autogen"
-    },
-    {
-      "id": "gpt-4o",
-      "name": "OpenAI GPT-4o",
-      "slug": "gpt-4o",
-      "category": "Text & Chat AI",
-      "description": "GPT-4o ('omni') is OpenAI's flagship multimodal foundation model, processing and generating text, audio, image, and video natively with sub-second response times.",
-      "price": "Free Tier / $20/mo (Plus) / API Usage",
-      "rating": 4.2,
-      "reviews": 73,
-      "communityIndex": 4.2,
-      "communityConfidence": "High Confidence",
-      "methodologyPhases": {
-        "phase1Ecosystem": 4.3,
-        "phase2StressSLA": 4.3,
-        "phase3Security": 3.8,
-        "phase4ExpertHuman": 4.3
-      },
-      "sla": "99.88%",
-      "latency": "~239 ms",
-      "throughput": "~89 tok/s",
-      "tags": [
-        "GPT-4o",
-        "OpenAI",
-        "Multimodal",
-        "Vision AI",
-        "Omnimodel",
-        "Voice AI"
-      ],
-      "pros": [
-        "Instantaneous token streaming with minimal latency overhead",
-        "Outstanding vision and document parsing accuracy across charts and PDFs",
-        "Free tier available to all standard ChatGPT web and mobile users"
-      ],
-      "cons": [
-        "Free users have dynamic rate limits that throttle during peak global hours",
-        "Complex multi-step coding is better handled with extended reasoning models (o1/Claude 3.7)"
-      ],
-      "hasApi": true,
-      "isOpenSource": false,
-      "isSponsored": false,
-      "reviewUrl": "https://agentcritiq.com/review/gpt-4o",
-      "officialUrl": "https://agentcritiq.com/go/gpt-4o"
-    },
-    {
-      "id": "claude-3-5-opus",
-      "name": "Claude 3.5 Opus",
-      "slug": "claude-3-5-opus",
-      "category": "Text & Chat AI",
-      "description": "Claude 3.5 Opus is Anthropic's heavyweight foundation model designed for deep scientific reasoning, complex codebase refactoring, and high-stakes executive analysis.",
-      "price": "$20.00/mo (Claude Pro) / API Usage",
-      "rating": 4.2,
-      "reviews": 45,
-      "communityIndex": 4.2,
-      "communityConfidence": "Verified",
-      "methodologyPhases": {
-        "phase1Ecosystem": 4.2,
-        "phase2StressSLA": 4.3,
-        "phase3Security": 3.8,
-        "phase4ExpertHuman": 4.2
-      },
-      "sla": "99.89%",
-      "latency": "~246 ms",
-      "throughput": "~86 tok/s",
-      "tags": [
-        "Claude 3.5 Opus",
-        "Anthropic",
-        "Heavyweight LLM",
-        "Executive AI",
-        "Deep Analysis"
-      ],
-      "pros": [
-        "Exceptional depth of thought on nuanced legal, financial, and philosophical documents",
-        "Handles complex multi-step instructions without dropping constraints",
-        "Produces eloquent, human-quality academic and strategic prose"
-      ],
-      "cons": [
-        "Higher token pricing on API compared to Sonnet or Flash models",
-        "Slightly longer generation latency due to dense model parameters"
-      ],
-      "hasApi": true,
-      "isOpenSource": false,
-      "isSponsored": false,
-      "reviewUrl": "https://agentcritiq.com/review/claude-3-5-opus",
-      "officialUrl": "https://agentcritiq.com/go/claude-3-5-opus"
     },
     {
       "id": "llama-3",
@@ -1581,7 +1463,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/llama-3",
       "officialUrl": "https://agentcritiq.com/go/llama-3"
     },
@@ -1625,7 +1506,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/weights-and-biases",
       "officialUrl": "https://agentcritiq.com/go/weights-and-biases"
     },
@@ -1667,7 +1547,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/google-veo-2",
       "officialUrl": "https://agentcritiq.com/go/google-veo-2"
     },
@@ -1710,7 +1589,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/kling-ai",
       "officialUrl": "https://agentcritiq.com/go/kling-ai"
     },
@@ -1753,7 +1631,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/hugging-face-chat",
       "officialUrl": "https://agentcritiq.com/go/hugging-face-chat"
     },
@@ -1795,7 +1672,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/chatdev",
       "officialUrl": "https://agentcritiq.com/go/chatdev"
     },
@@ -1838,7 +1714,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/make-com",
       "officialUrl": "https://agentcritiq.com/go/make-com"
     },
@@ -1881,7 +1756,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/langsmith",
       "officialUrl": "https://agentcritiq.com/go/langsmith"
     },
@@ -1924,7 +1798,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/mistral-large",
       "officialUrl": "https://agentcritiq.com/go/mistral-large"
     },
@@ -1967,7 +1840,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/fiddler-ai",
       "officialUrl": "https://agentcritiq.com/go/fiddler-ai"
     },
@@ -2009,7 +1881,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/lindy-ai",
       "officialUrl": "https://agentcritiq.com/go/lindy-ai"
     },
@@ -2052,7 +1923,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/magnific-ai",
       "officialUrl": "https://agentcritiq.com/go/magnific-ai"
     },
@@ -2094,7 +1964,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/sweep",
       "officialUrl": "https://agentcritiq.com/go/sweep"
     },
@@ -2138,7 +2007,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/trulens",
       "officialUrl": "https://agentcritiq.com/go/trulens"
     },
@@ -2181,7 +2049,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/aiva",
       "officialUrl": "https://agentcritiq.com/go/aiva"
     },
@@ -2223,7 +2090,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/amazon-codewhisperer",
       "officialUrl": "https://agentcritiq.com/go/amazon-codewhisperer"
     },
@@ -2266,7 +2132,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/canva-magic-studio",
       "officialUrl": "https://agentcritiq.com/go/canva-magic-studio"
     },
@@ -2309,7 +2174,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/notion-ai",
       "officialUrl": "https://agentcritiq.com/go/notion-ai"
     },
@@ -2352,7 +2216,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/adobe-firefly",
       "officialUrl": "https://agentcritiq.com/go/adobe-firefly"
     },
@@ -2395,7 +2258,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/arthur-ai",
       "officialUrl": "https://agentcritiq.com/go/arthur-ai"
     },
@@ -2437,7 +2299,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/multion",
       "officialUrl": "https://agentcritiq.com/go/multion"
     },
@@ -2479,7 +2340,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/sourcegraph-cody",
       "officialUrl": "https://agentcritiq.com/go/sourcegraph-cody"
     },
@@ -2521,7 +2381,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/opendevin",
       "officialUrl": "https://agentcritiq.com/go/opendevin"
     },
@@ -2564,7 +2423,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/comet-ml",
       "officialUrl": "https://agentcritiq.com/go/comet-ml"
     },
@@ -2607,7 +2465,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/leonardo-ai",
       "officialUrl": "https://agentcritiq.com/go/leonardo-ai"
     },
@@ -2649,7 +2506,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/luma-dream-machine",
       "officialUrl": "https://agentcritiq.com/go/luma-dream-machine"
     },
@@ -2692,7 +2548,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/ideogram-2",
       "officialUrl": "https://agentcritiq.com/go/ideogram-2"
     },
@@ -2735,7 +2590,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/udio",
       "officialUrl": "https://agentcritiq.com/go/udio"
     },
@@ -2778,7 +2632,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/arize-ai",
       "officialUrl": "https://agentcritiq.com/go/arize-ai"
     },
@@ -2820,7 +2673,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/codeium",
       "officialUrl": "https://agentcritiq.com/go/codeium"
     },
@@ -2863,7 +2715,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/descript",
       "officialUrl": "https://agentcritiq.com/go/descript"
     },
@@ -2905,7 +2756,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/metagpt",
       "officialUrl": "https://agentcritiq.com/go/metagpt"
     },
@@ -2947,7 +2797,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/pi-ai",
       "officialUrl": "https://agentcritiq.com/go/pi-ai"
     },
@@ -2989,7 +2838,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/phind",
       "officialUrl": "https://agentcritiq.com/go/phind"
     },
@@ -3031,7 +2879,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/gpt-researcher",
       "officialUrl": "https://agentcritiq.com/go/gpt-researcher"
     },
@@ -3073,7 +2920,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/microsoft-copilot",
       "officialUrl": "https://agentcritiq.com/go/microsoft-copilot"
     },
@@ -3116,7 +2962,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/poe",
       "officialUrl": "https://agentcritiq.com/go/poe"
     },
@@ -3158,7 +3003,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/auto-gpt",
       "officialUrl": "https://agentcritiq.com/go/auto-gpt"
     },
@@ -3201,7 +3045,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/pika-labs",
       "officialUrl": "https://agentcritiq.com/go/pika-labs"
     },
@@ -3243,51 +3086,8 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/tabnine",
       "officialUrl": "https://agentcritiq.com/go/tabnine"
-    },
-    {
-      "id": "grok-2",
-      "name": "Grok 2 (xAI)",
-      "slug": "grok-2",
-      "category": "Text & Chat AI",
-      "description": "Grok 2 is xAI's conversational AI assistant on X featuring real-time social intelligence, unfiltered reasoning, and photorealistic FLUX image generation.",
-      "price": "Included with X Premium ($8/mo)",
-      "rating": 3.5,
-      "reviews": 67,
-      "communityIndex": 3.7,
-      "communityConfidence": "High Confidence",
-      "methodologyPhases": {
-        "phase1Ecosystem": 3.6,
-        "phase2StressSLA": 3.6,
-        "phase3Security": 3.8,
-        "phase4ExpertHuman": 3.7
-      },
-      "sla": "99.11%",
-      "latency": "~230 ms",
-      "throughput": "~80 tok/s",
-      "tags": [
-        "Grok 2",
-        "xAI",
-        "FLUX",
-        "Social Intelligence",
-        "X Premium"
-      ],
-      "pros": [
-        "Fastest access to breaking news and viral discussions on X",
-        "FLUX image generation is fast, photorealistic, and creative",
-        "Affordable entry point included with standard X Premium ($8/mo)"
-      ],
-      "cons": [
-        "Requires an active X social account for web chat access",
-        "Complex coding and reasoning tasks are better served by the newer Grok 3 flagship"
-      ],
-      "hasApi": true,
-      "isOpenSource": false,
-      "isSponsored": false,
-      "reviewUrl": "https://agentcritiq.com/review/grok-2",
-      "officialUrl": "https://agentcritiq.com/go/grok-2"
     },
     {
       "id": "brave-leo-ai",
@@ -3327,7 +3127,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/brave-leo-ai",
       "officialUrl": "https://agentcritiq.com/go/brave-leo-ai"
     },
@@ -3370,7 +3169,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/duckduckgo-ai-chat",
       "officialUrl": "https://agentcritiq.com/go/duckduckgo-ai-chat"
     },
@@ -3413,7 +3211,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/browse-ai",
       "officialUrl": "https://agentcritiq.com/go/browse-ai"
     },
@@ -3455,7 +3252,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/you-com",
       "officialUrl": "https://agentcritiq.com/go/you-com"
     },
@@ -3498,7 +3294,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/zapier",
       "officialUrl": "https://agentcritiq.com/go/zapier"
     },
@@ -3541,7 +3336,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/stable-diffusion-3-5",
       "officialUrl": "https://agentcritiq.com/go/stable-diffusion-3-5"
     },
@@ -3583,7 +3377,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/taskade-ai",
       "officialUrl": "https://agentcritiq.com/go/taskade-ai"
     },
@@ -3626,7 +3419,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/fireflies-ai",
       "officialUrl": "https://agentcritiq.com/go/fireflies-ai"
     },
@@ -3669,7 +3461,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/murf-ai",
       "officialUrl": "https://agentcritiq.com/go/murf-ai"
     },
@@ -3712,7 +3503,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/synthesia",
       "officialUrl": "https://agentcritiq.com/go/synthesia"
     },
@@ -3756,7 +3546,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/convai",
       "officialUrl": "https://agentcritiq.com/go/convai"
     },
@@ -3798,7 +3587,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/character-ai",
       "officialUrl": "https://agentcritiq.com/go/character-ai"
     },
@@ -3840,7 +3628,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/surfer-seo",
       "officialUrl": "https://agentcritiq.com/go/surfer-seo"
     },
@@ -3884,7 +3671,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/inworld-ai",
       "officialUrl": "https://agentcritiq.com/go/inworld-ai"
     },
@@ -3926,7 +3712,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/agent-gpt",
       "officialUrl": "https://agentcritiq.com/go/agent-gpt"
     },
@@ -3968,7 +3753,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/pictory",
       "officialUrl": "https://agentcritiq.com/go/pictory"
     },
@@ -4010,7 +3794,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/writesonic",
       "officialUrl": "https://agentcritiq.com/go/writesonic"
     },
@@ -4052,7 +3835,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/jasper-ai",
       "officialUrl": "https://agentcritiq.com/go/jasper-ai"
     },
@@ -4094,7 +3876,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/godmode-space",
       "officialUrl": "https://agentcritiq.com/go/godmode-space"
     },
@@ -4136,7 +3917,6 @@
       ],
       "hasApi": true,
       "isOpenSource": true,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/baby-agi",
       "officialUrl": "https://agentcritiq.com/go/baby-agi"
     },
@@ -4178,7 +3958,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/cognosys",
       "officialUrl": "https://agentcritiq.com/go/cognosys"
     },
@@ -4220,7 +3999,6 @@
       ],
       "hasApi": false,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/replika",
       "officialUrl": "https://agentcritiq.com/go/replika"
     },
@@ -4262,7 +4040,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/anyword",
       "officialUrl": "https://agentcritiq.com/go/anyword"
     },
@@ -4304,7 +4081,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/hyperwrite",
       "officialUrl": "https://agentcritiq.com/go/hyperwrite"
     },
@@ -4346,7 +4122,6 @@
       ],
       "hasApi": true,
       "isOpenSource": false,
-      "isSponsored": false,
       "reviewUrl": "https://agentcritiq.com/review/copy-ai",
       "officialUrl": "https://agentcritiq.com/go/copy-ai"
     }

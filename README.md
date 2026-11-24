@@ -17,7 +17,7 @@ website: https://agentcritiq.com
 repository: https://github.com/dobby-aidev/agent-critiq
 ---
 
-# 🤖 Agent Critiq MCP Server (v3.6.0)
+# 🤖 Agent Critiq MCP Server (v3.7.0)
 
 [![Live Platform](https://img.shields.io/badge/Platform-agentcritiq.com-cyan.svg)](https://agentcritiq.com)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-130%2B_Downloads-yellow.svg)](https://huggingface.co/datasets/dobbyb-aidev/agent-critiq-ai-reviews)
@@ -38,15 +38,15 @@ This server enables **Claude Desktop, Cursor IDE, Windsurf, LobeChat, Roo Code, 
 
 ## 🇹🇷 Türkçe Özet / Turkish Summary
 
-**Agent Critiq MCP Sunucusu v3.6.0**, Cursor, Windsurf, LobeChat ve Claude Desktop gibi yapay zeka kod editörlerinin Agent Critiq veritabanındaki 100'den fazla yapay zeka aracını, **Metodoloji v3.0 (4 Fazlı Tarafsız Test Karnesi)** sonuçlarını ve **canlı SLA / yanıt gecikmesi (ms)** telemetrilerini doğrudan geliştirme ortamınızdan sorgulamasını sağlar.
+**Agent Critiq MCP Sunucusu v3.7.0**, Cursor, Windsurf, LobeChat ve Claude Desktop gibi yapay zeka kod editörlerinin Agent Critiq veritabanındaki 100'den fazla yapay zeka aracını, **Metodoloji v3.0 (4 Fazlı Tarafsız Test Karnesi)** sonuçlarını, **canlı Frontier LLM Liderlik Tablosunu** ve **canlı SLA / yanıt gecikmesi (ms)** telemetrilerini doğrudan geliştirme ortamınızdan sorgulamasını sağlar.
 
 ---
 
 ## ⚙️ Core Capabilities / Sunucu Yetenekleri
 
-Agent Critiq MCP Sunucusu v3.6.0, MCP spesifikasyonunun tüm **üç temel özelliğini (Tools + Resources + Prompts)** eksiksiz olarak destekler:
+Agent Critiq MCP Sunucusu v3.7.0, MCP spesifikasyonunun tüm **üç temel özelliğini (Tools + Resources + Prompts)** eksiksiz olarak destekler:
 
-### 🛠️ 1. MCP Tools (Ajan Araçları - 7 Adet)
+### 🛠️ 1. MCP Tools (Ajan Araçları - 8 Adet)
 
 | Tool Name | Parameters | Description (EN) | Açıklama (TR) |
 |-----------|------------|------------------|---------------|
@@ -57,6 +57,7 @@ Agent Critiq MCP Sunucusu v3.6.0, MCP spesifikasyonunun tüm **üç temel özell
 | `list_categories` | None | List all active software categories and total tool counts. | Tüm aktif kategorileri ve araç sayılarını listeler. |
 | `get_top_rated` | `category`, `by_community_index`, `limit` | Retrieve top-rated tools sorted by Community Index. | Metodoloji v3.0 puanına göre en yüksek araçları sıralar. |
 | `compare_tools` | `slugs` *(required array)* | Generate a side-by-side comparison matrix with 4-phase scores. | Araçları 4 faz puanı ve telemetrisiyle yan yana karşılaştırır. |
+| `get_frontier_benchmarks` | None | Live Frontier LLM Leaderboard (SWE-bench, MMLU-Pro, latency, 1M token pricing). | Canlı Frontier LLM Liderlik Tablosu (fiyat, gecikme, SWE-bench). |
 
 ---
 
@@ -66,6 +67,7 @@ Agent Critiq MCP Sunucusu v3.6.0, MCP spesifikasyonunun tüm **üç temel özell
 |--------------|----------|-------------|
 | `agentcritiq://dataset/tools.json` | `application/json` | Full indexed dataset of 100+ verified AI tools with Methodology v3.0. |
 | `agentcritiq://dataset/categories.json` | `application/json` | Software category list with total tool counts. |
+| `agentcritiq://dataset/benchmarks.json` | `application/json` | Live synced Frontier LLM Leaderboard pricing & latency telemetry. |
 
 ---
 

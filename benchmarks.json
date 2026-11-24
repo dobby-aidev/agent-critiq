@@ -1,0 +1,124 @@
+{
+  "lastSyncedAt": "2026-11-24T18:04:26.509Z",
+  "source": "OpenRouter Live API + Agent Critiq Empirical Lab",
+  "apiStatus": "live",
+  "apiProbeLatencyMs": 707,
+  "syncedModelsCount": 1,
+  "models": [
+    {
+      "rank": 1,
+      "name": "Claude",
+      "slug": "claude-3-5-sonnet",
+      "openrouterId": "anthropic/claude-3.7-sonnet",
+      "provider": "Anthropic",
+      "architecture": "Claude 3.7 Sonnet Hybrid & 3.5 Sonnet",
+      "sweBench": "70.3%",
+      "mmluPro": "78.2%",
+      "latency": "420ms",
+      "context": "200K",
+      "pricing": "$3.00 / $15.00",
+      "inputPerM": 3,
+      "outputPerM": 15,
+      "badgeTr": "1 Numara · SOTA",
+      "badgeEn": "Rank #1 · SOTA",
+      "badgeEs": "Rango #1 · SOTA",
+      "verdict": {
+        "tr": "Yazılım mühendisliği, otonom kod ajanları ve hibrit düşünmede mutlak lider.",
+        "en": "The definitive standard for agentic software engineering and hybrid thinking.",
+        "es": "El estándar definitivo para ingeniería de software autónoma y razonamiento híbrido."
+      }
+    },
+    {
+      "rank": 2,
+      "name": "ChatGPT",
+      "slug": "chatgpt-plus",
+      "openrouterId": "openai/gpt-4.5-preview",
+      "provider": "OpenAI",
+      "architecture": "GPT-4.5 Orion & o3-mini",
+      "sweBench": "68.9%",
+      "mmluPro": "79.4%",
+      "latency": "340ms",
+      "context": "256K",
+      "pricing": "$2.50 / $10.00",
+      "inputPerM": 2.5,
+      "outputPerM": 10,
+      "badgeTr": "GPT-4.5 & o3",
+      "badgeEn": "GPT-4.5 & o3",
+      "badgeEs": "GPT-4.5 & o3",
+      "verdict": {
+        "tr": "GPT-4.5 Orion ve o3-mini ile derin matematik, otonom bilgisayar kullanımı ve gerçek zamanlı ses.",
+        "en": "Frontier GPT-4.5 Orion and o3-mini delivering unprecedented math, desktop agency and native voice.",
+        "es": "Frontier GPT-4.5 Orion y o3-mini con matemáticas profundas, control de escritorio y voz nativa."
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Google Gemini",
+      "slug": "gemini-advanced",
+      "openrouterId": "google/gemini-2.0-flash-001",
+      "provider": "Google DeepMind",
+      "architecture": "Gemini 2.5 Pro & 2.0 Flash",
+      "sweBench": "65.4%",
+      "mmluPro": "76.8%",
+      "latency": "145ms",
+      "context": "1,000K",
+      "pricing": "$0.10 / $0.40",
+      "inputPerM": 0.1,
+      "outputPerM": 0.4,
+      "badgeTr": "1M Bellek · Hızlı",
+      "badgeEn": "1M Ctx · Ultra Fast",
+      "badgeEs": "1M Ctx · Rápido",
+      "verdict": {
+        "tr": "Yeni nesil Gemini mimarisi, 145ms ultra düşük gecikme ve 1M devasa bağlam penceresi.",
+        "en": "Next-gen Gemini architecture paired with record 145ms latency and massive 1M token context.",
+        "es": "Arquitectura Gemini de vanguardia con latencia récord de 145ms y contexto masivo de 1M."
+      }
+    },
+    {
+      "rank": 4,
+      "name": "DeepSeek",
+      "slug": "deepseek-v3",
+      "openrouterId": "deepseek/deepseek-chat",
+      "provider": "DeepSeek",
+      "architecture": "DeepSeek V3 & R1/R2",
+      "sweBench": "65.2%",
+      "mmluPro": "71.5%",
+      "latency": "490ms",
+      "context": "164K",
+      "pricing": "$0.26 / $1.03",
+      "inputPerM": 0.26,
+      "outputPerM": 1.03,
+      "badgeTr": "Açık Mimari · F/P",
+      "badgeEn": "MoE Value King",
+      "badgeEs": "Rey Calidad/Precio",
+      "verdict": {
+        "tr": "Frontier kalitesini $0.27/1M token fiyatına sunan devrimsel açık model mimarisi.",
+        "en": "Disruptive MoE delivering near-frontier intelligence at a fraction of standard API prices.",
+        "es": "Arquitectura MoE disruptiva que ofrece inteligencia de frontera a un costo mínimo."
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Grok",
+      "slug": "grok-3",
+      "openrouterId": "x-ai/grok-2-1212",
+      "provider": "xAI",
+      "architecture": "Grok 3 Colossus & Mini",
+      "sweBench": "64.5%",
+      "mmluPro": "75.2%",
+      "latency": "410ms",
+      "context": "128K",
+      "pricing": "$3.00 / $15.00",
+      "inputPerM": 3,
+      "outputPerM": 15,
+      "badgeTr": "Colossus Cluster",
+      "badgeEn": "Colossus Cluster",
+      "badgeEs": "Colossus Cluster",
+      "verdict": {
+        "tr": "Colossus süper kümesiyle eğitilen, bilimsel akıl yürütme ve canlı veri analitiğinde üstün model.",
+        "en": "Colossus 100K GPU-trained frontier model dominating scientific math and live telemetry.",
+        "es": "Modelo de frontera entrenado en Colossus líder en matemáticas científicas y telemetría."
+      }
+    }
+  ]
+}

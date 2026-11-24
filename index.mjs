@@ -1,7 +1,7 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { 
-  CallToolRequestSchema, 
+import {
+  CallToolRequestSchema,
   ListToolsRequestSchema,
   ListResourcesRequestSchema,
   ReadResourceRequestSchema,
@@ -14,7 +14,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const datasetPath = path.join(__dirname, 'dataset.json');
+const benchmarksPath = path.join(__dirname, 'benchmarks.json');
 let dataset = [];
+let benchmarks = { models: [] };
 
 try {
   const raw = JSON.parse(fs.readFileSync(datasetPath, 'utf-8'));
@@ -23,10 +25,18 @@ try {
   console.error("Failed to load Agent Critiq dataset.json:", err);
 }
 
+try {
+  if (fs.existsSync(benchmarksPath)) {
+    benchmarks = JSON.parse(fs.readFileSync(benchmarksPath, 'utf-8'));
+  }
+} catch (err) {
+  console.error("Failed to load Agent Critiq benchmarks.json:", err);
+}
+
 const server = new Server(
   {
     name: "agent-critiq-mcp-server",
-    version: "3.6.0",
+    version: "3.7.0",
   },
   {
     capabilities: {
@@ -52,6 +62,12 @@ server.setRequestHandler(ListResourcesRequestSchema, async () => {
         name: "Agent Critiq Software Categories",
         mimeType: "application/json",
         description: "List of all active software categories and tool distribution."
+      },
+      {
+        uri: "agentcritiq://dataset/benchmarks.json",
+        name: "Agent Critiq Live Frontier LLM Benchmarks",
+        mimeType: "application/json",
+        description: "Live synced SWE-bench, MMLU-Pro, TTFT latency, context window, and 1M token pricing for frontier LLMs."
       }
     ]
   };
@@ -82,6 +98,17 @@ server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
           uri,
           mimeType: "application/json",
           text: JSON.stringify(categoriesMap, null, 2)
+        }
+      ]
+    };
+  }
+  if (uri === "agentcritiq://dataset/benchmarks.json") {
+    return {
+      contents: [
+        {
+          uri,
+          mimeType: "application/json",
+          text: JSON.stringify(benchmarks, null, 2)
         }
       ]
     };
@@ -266,6 +293,14 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           },
           required: ["slugs"]
         }
+      },
+      {
+        name: "get_frontier_benchmarks",
+        description: "Retrieve the live synced Weekly Frontier LLM Leaderboard (Claude, ChatGPT, Gemini, DeepSeek, Grok) with SWE-bench Verified, MMLU-Pro, TTFT latency, context window, and 1M token pricing.",
+        inputSchema: {
+          type: "object",
+          properties: {}
+        }
       }
     ]
   };
@@ -283,7 +318,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const limit = Number(args?.limit) || 10;
 
     let filtered = dataset.filter(tool => {
-      const matchQ = !q || 
+      const matchQ = !q ||
         tool.name.toLowerCase().includes(q) ||
         (tool.descriptionEn && tool.descriptionEn.toLowerCase().includes(q)) ||
         (tool.descriptionTr && tool.descriptionTr.toLowerCase().includes(q)) ||
@@ -481,7 +516,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const byCommunityIndex = args?.by_community_index !== false;
     const limit = Number(args?.limit) || 10;
 
-    let list = cat 
+    let list = cat
       ? dataset.filter(t => (t.categoryEn && t.categoryEn.toLowerCase().includes(cat)) || (t.categoryTr && t.categoryTr.toLowerCase().includes(cat)))
       : [...dataset];
 
@@ -543,13 +578,24 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     };
   }
 
+  if (name === "get_frontier_benchmarks") {
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(benchmarks, null, 2)
+        }
+      ]
+    };
+  }
+
   throw new Error(`Unknown MCP tool handler: ${name}`);
 });
 
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Agent Critiq MCP Server v3.6.0 running on Stdio transport (Methodology v3.0 Enabled).");
+  console.error("Agent Critiq MCP Server v3.7.0 running on Stdio transport (Methodology v3.0 + Live Benchmarks Enabled).");
 }
 
 main().catch(err => {

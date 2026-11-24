@@ -1,6 +1,6 @@
 {
   "name": "agent-critiq-mcp-server",
-  "version": "1.0.0",
+  "version": "3.7.0",
   "description": "Official Model Context Protocol (MCP) Server for Agent Critiq AI Tools Intelligence Platform",
   "main": "index.mjs",
   "type": "module",
